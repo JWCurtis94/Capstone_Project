@@ -16,11 +16,11 @@
 - **
 
 ## 🛠️ Technologies Used
-- ** Backend: Django (Python)
-- ** Database: PostgreSQL
-- ** Frontend: HTML, CSS, JavaScript
-- ** Task Queue: Celery with Redis (for notifications and scheduled tasks)
-- ** File Storage: Django's FileField (consider using cloud storage for production)
+- ### Backend: Django (Python)
+- ### Database: PostgreSQL
+- ### Frontend: HTML, CSS, JavaScript
+- ### Task Queue: Celery with Redis (for notifications and scheduled tasks)
+- ### File Storage: Django's FileField (consider using cloud storage for production)
 
 ## 🔧 Testing
 As demonstrated in the images below, my website successfully passes all validation checks and achieves a strong Lighthouse score. While there is some room for improvement, the current metrics reflect a well-optimized and high-quality site.
