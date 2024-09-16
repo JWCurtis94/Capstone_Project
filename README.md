@@ -1,9 +1,7 @@
 # F1 Sim Racing Website
--https://
-![)
 
 ## 🌦️ About
-
+- W2W (Wheel-to-Wheel) F1 Sim Racing League is a web application built with Django to manage and organize Formula 1 simulation racing events. This platform provides a comprehensive solution for racing enthusiasts to participate in virtual F1 races, track their performance, and engage with the community.
 
 ## 🔎 UX Design
 
