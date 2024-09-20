@@ -3,15 +3,16 @@ from django.contrib.auth.decorators import login_required
 from .models import Race, RaceResult
 from .forms import RaceResultForm
 from django.db.models import Sum, F, Case, When, IntegerField
+from django.utils import timezone
 
 # Create your views here.
 def home(request):
     upcoming_races = Race.objects.filter(date__gte=timezone.now()).order_by('date')[:5]
-    return render(request, 'core/home.html', {'upcoming_races': upcoming_races})
+    return render(request, 'templates/core/home.html', {'upcoming_races': upcoming_races})
 
 @login_required
 def submit_result(request):
-    if request.methord == 'POST':
+    if request.method == 'POST':
         form = RaceResultForm(request.POST)
         if form.is_valid():
             result = form.save(commit=False)
@@ -19,7 +20,7 @@ def submit_result(request):
             result.save()
             return redirect('standings')
     else:
-        form = RaceResultsForm()
+        form = RaceResultForm()
     return render(request, 'core/submit_result.html', {'form': form})
 
 def standings(request):
@@ -39,12 +40,14 @@ def standings(request):
             When(position=12, then=1),
             default=0,
             output_field=IntegerField()
-        )) + Sum(Case(
-            When(fastest_lap=True, then=1),
-            When(pole_position=True, then=1),
-            default=0,
-            output_field=IntegerField()
-        ))
+            )
+        ) + Sum(
+            Case(
+                When(fastest_lap=True, then=1),
+                default=0,
+                output_field=IntegerField()
+            )
+        )
     ).order_by('-total_points')
     
     return render(request, 'core/standings.html', {'standings': results})
