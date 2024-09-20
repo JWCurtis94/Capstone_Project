@@ -35,6 +35,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '8000-jwcurtis94-capstoneproj-2igqtdgi75h.ws.codeinstitute-ide.net',
     '8000-jwcurtis94-capstoneproj-szixg7vt8q9.ws.codeinstitute-ide.net',
+    'w2w-791ab20c5eb9.herokuapp.com',
 ]
 
 
