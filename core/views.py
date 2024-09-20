@@ -8,7 +8,7 @@ from django.utils import timezone
 # Create your views here.
 def home(request):
     upcoming_races = Race.objects.filter(date__gte=timezone.now()).order_by('date')[:5]
-    return render(request, 'templates/core/home.html', {'upcoming_races': upcoming_races})
+    return render(request, 'core/home.html', {'upcoming_races': upcoming_races})
 
 @login_required
 def submit_result(request):

@@ -4,7 +4,7 @@
 <div class="form-container">
     <h2>Login</h2>
     <form methord="POST">
-        {% csfr_token %}
+        {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Login</button>
     </form>
