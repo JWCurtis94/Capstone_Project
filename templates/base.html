@@ -14,7 +14,7 @@
         <nav aria-label="Main Navigation">
             <div class="logo">
                 <a href="{% url 'home' %}">
-                    <img src="{% static 'css/assets/W2W.png' %}" alt="W2W logo">
+                    <img src="{% static 'assets/W2W.png' %}" alt="W2W logo">
                 </a>
             </div>
             <ul>
@@ -27,88 +27,30 @@
                     <li><a href="{% url 'login' %}">Login</a></li>
                 {% endif %}
             </ul>
-        </nav>
+        </nav>        
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section with Video -->
-        <section class="hero" aria-label="Hero Section">
-            <video autoplay muted loop>
-                <source src="{% static 'assets/hero-video.mp4' %}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="hero-text">
-                <h1>Welcome to W2W F1 Sim Racing League</h1>
-                <p>Experience the thrill of racing from wheel to wheel.</p>
-            </div>
-        </section>
+    <!-- Hero Section with Video -->
+    <section class="hero" aria-label="Hero Section">
+        <video autoplay muted loop>
+            <source src="{% static 'assets/hero-video.mp4' %}" type="video/mp4">
+            <p>Your browser does not support the video tag.</p>
+        </video>
+        <div class="hero-text">
+            <h1>Welcome to W2W F1 Sim Racing League</h1>
+            <p>Experience the thrill of racing from wheel to wheel.</p>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section class="info-section" aria-label="About Us">
-            <article class="text-container">
-                <h2>About Our League</h2>
-                <p>W2W F1 Sim Racing League offers a competitive yet friendly environment for racing enthusiasts. We race on the latest F1 24 simulator, offering the most realistic experience possible.</p>
-            </article>
-
-            <figure class="image-container">
-                <img src="{% static 'assets/league-race.jpg' %}" alt="League Race Image">
-            </figure>
-
-            <article class="text-container">
-                <h2>Join Us</h2>
-                <p>We welcome racers of all skill levels. Join us today, and take part in exciting races, meet fellow enthusiasts, and improve your skills on the track!</p>
-            </article>
-        </section>
-
-        <!-- League Rules Section -->
-        <section class="info-section alt-section" aria-label="League Rules">
-            <article class="text-container">
-                <h2>League Rules</h2>
-                <p>To ensure fair play and maintain competitiveness, all members are required to follow our official league rules. These include proper race etiquette, no intentional collisions, and strict adherence to FIA regulations for racing conduct.</p>
-            </article>
-
-            <figure class="image-container">
-                <img src="{% static 'assets/rules.jpg' %}" alt="League Rules Image">
-            </figure>
-        </section>
-
-        <!-- Race Schedule Section -->
-        <section class="info-section" aria-label="Race Schedule">
-            <article class="text-container">
-                <h2>Race Schedule</h2>
-                <p>Our races are held every weekend. Keep track of the upcoming races and qualifying rounds. Check the calendar regularly to make sure you don’t miss any of the exciting race events!</p>
-            </article>
-
-            <figure class="image-container">
-                <img src="{% static 'assets/schedule.jpg' %}" alt="Race Schedule Image">
-            </figure>
-        </section>
-
-        <!-- Featured Drivers Section -->
-        <section class="info-section alt-section" aria-label="Featured Drivers">
-            <article class="text-container">
-                <h2>Featured Drivers</h2>
-                <p>Meet some of our top racers who continue to dominate the leaderboard. From their impressive skills to their race strategies, learn more about what makes these drivers the best in the league!</p>
-            </article>
-
-            <figure class="image-container">
-                <img src="{% static 'assets/featured-driver.jpg' %}" alt="Featured Driver Image">
-            </figure>
-        </section>
-    </main>
-
-    <!-- Footer Section -->
     <footer aria-label="Footer">
         <div class="social-links">
             <a href="https://discord.com/invite/your-discord-link" target="_blank" aria-label="Discord">
-                <img src="{% static 'assets/discord-icon.png' %}" alt="Discord Icon">
+                <img src="{% static 'assets/discord-icon.png' %}" alt="Discord Icon">  <!-- Fixed path -->
             </a>
             <a href="https://www.youtube.com/channel/your-youtube-link" target="_blank" aria-label="YouTube">
-                <img src="{% static '/css/assets/youtube-icon.png' %}" alt="YouTube Icon">
+                <img src="{% static 'assets/youtube-icon.png' %}" alt="YouTube Icon">  <!-- Fixed path -->
             </a>
         </div>
-        <p>&copy; 2024 W2W Racing League. All rights reserved.</p>
     </footer>
 
     <script src="{% static 'js/script.js' %}"></script>

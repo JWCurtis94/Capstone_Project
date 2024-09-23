@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'core',
+    'w2w_league',
 ]
 
 MIDDLEWARE = [

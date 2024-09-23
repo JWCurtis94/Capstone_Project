@@ -1,11 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect  # Added redirect import
 from django.contrib.auth.decorators import login_required
 from .models import Race, RaceResult
 from .forms import RaceResultForm
 from django.db.models import Sum, F, Case, When, IntegerField
 from django.utils import timezone
 
-# Create your views here.
 def home(request):
     upcoming_races = Race.objects.filter(date__gte=timezone.now()).order_by('date')[:5]
     return render(request, 'core/home.html', {'upcoming_races': upcoming_races})
@@ -19,6 +18,8 @@ def submit_result(request):
             result.driver = request.user
             result.save()
             return redirect('standings')
+        else:
+            return render(request, 'core/submit_result.html', {'form': form, 'error': 'Invalid data'})  # Added error handling
     else:
         form = RaceResultForm()
     return render(request, 'core/submit_result.html', {'form': form})
