@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
+    'allauth.socialaccount',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -56,6 +57,7 @@ INSTALLED_APPS = [
     'accounts',
     'core',
     'w2w_league',
+    
 ]
 
 MIDDLEWARE = [

@@ -32,6 +32,7 @@ urlpatterns = [
     path('submit-result/', core_views.submit_result, name='submit_result'),
     path('standings/', core_views.standings, name='standings'),
     path('accounts/', include('allauth.urls')),
+    path('accounts/login/', include('allauth.urls')),
 ]
 
 if settings.DEBUG:
