@@ -38,6 +38,11 @@ ALLOWED_HOSTS = [
     'w2w-791ab20c5eb9.herokuapp.com',
     '8000-jwcurtis94-capstoneproj-din15cczels.ws.codeinstitute-ide.net',
     '8000-jwcurtis94-capstoneproj-7oceb1xcufc.ws.codeinstitute-ide.net',
+    '8000-jwcurtis94-capstoneproj-4bdzr955vpk.ws.codeinstitute-ide.net',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-jwcurtis94-capstoneproj-4bdzr955vpk.ws.codeinstitute-ide.net',
 ]
 
 
@@ -146,7 +151,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 SITE_ID = 1
 
 # Default primary key field type

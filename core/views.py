@@ -52,3 +52,6 @@ def standings(request):
     ).order_by('-total_points')
     
     return render(request, 'core/standings.html', {'standings': results})
+
+def fia(request):
+    return render(request, 'fia.html')

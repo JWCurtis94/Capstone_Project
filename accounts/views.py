@@ -6,18 +6,15 @@ from .forms import UserUpdateForm, ProfileUpdateForm
 
 # Create your views here.
 def register(request):
-    if request.method == 'post':
-        form = UserCreationForm(request.POST)
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('home')
+            user = form.save()
+            login(request, user)  # Automatically log the user in
+            return redirect('home')  # Redirect to homepage or dashboard
     else:
-        form = UserCreationForm()
-    return render (request, 'accounts/register.html', {'form': form})
+        form = RegistrationForm()
+    return render(request, 'register.html', {'form': form})
 
 @login_required
 def profile(request):
@@ -37,3 +34,4 @@ def profile(request):
         'p_form': p_form
     }
     return render(request, 'accounts/profile.html', context)
+

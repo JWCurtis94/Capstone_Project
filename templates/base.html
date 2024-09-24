@@ -19,15 +19,23 @@
             </div>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'account_signup' %}">Register</a></li>
+                
                 {% if user.is_authenticated %}
+                    <!-- Links visible to logged-in users -->
+                    <li><a href="{% url 'fia' %}">FIA</a></li>
+                    <li><a href="{% url 'calendar' %}">Calendar</a></li>
+                    <li><a href="{% url 'standings' %}">Standings & Statistics</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
                     <li><a href="{% url 'account_logout' %}">Logout</a></li>
                 {% else %}
+                    <!-- Links visible to guests (not logged in) -->
+                    <li><a href="{% url 'account_signup' %}">Register</a></li>
                     <li><a href="{% url 'account_login' %}">Login</a></li>
                 {% endif %}
             </ul>
         </nav>
     </header>
+    
 
     <!-- Hero Section with Video -->
     <section class="hero" aria-label="Hero Section">
@@ -40,14 +48,14 @@
             <p>Experience the thrill of racing from wheel to wheel.</p>
         </div>
     </section>
-
+    <!-- Footer section-->
     <footer aria-label="Footer">
         <div class="social-links">
-            <a href="https://discord.com/invite/your-discord-link" target="_blank" aria-label="Discord">
-                <img src="{% static 'assets/discord-icon.png' %}" alt="Discord Icon">  <!-- Fixed path -->
+            <a href="https://discord.gg/H4u9wrQYU8" target="_blank" aria-label="Discord">
+                <img src="{% static 'assets/discord.png' %}" alt="Discord Icon">
             </a>
             <a href="https://www.youtube.com/channel/your-youtube-link" target="_blank" aria-label="YouTube">
-                <img src="{% static 'assets/youtube-icon.png' %}" alt="YouTube Icon">  <!-- Fixed path -->
+                <img src="{% static 'assets/youtube.png' %}" alt="YouTube Icon">
             </a>
         </div>
     </footer>

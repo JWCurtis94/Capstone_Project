@@ -19,7 +19,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.conf import settings
-from core import views as core_views
+from core import views as core_views  # Using core_views to reference core views
 from accounts import views as accounts_views
 
 urlpatterns = [
@@ -33,6 +33,7 @@ urlpatterns = [
     path('standings/', core_views.standings, name='standings'),
     path('accounts/', include('allauth.urls')),
     path('accounts/login/', include('allauth.urls')),
+    path('fia/', core_views.fia, name='fia'),  # Fix: Use core_views.fia instead of views.fia
 ]
 
 if settings.DEBUG:
