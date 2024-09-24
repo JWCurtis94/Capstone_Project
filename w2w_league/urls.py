@@ -33,7 +33,9 @@ urlpatterns = [
     path('standings/', core_views.standings, name='standings'),
     path('accounts/', include('allauth.urls')),
     path('accounts/login/', include('allauth.urls')),
-    path('fia/', core_views.fia, name='fia'),  # Fix: Use core_views.fia instead of views.fia
+    path('fia/', core_views.fia, name='fia'),
+    path('calendar/', core_views.fia, name='calendar'),
+    path('about/', core_views.fia, name='about'),
 ]
 
 if settings.DEBUG:
