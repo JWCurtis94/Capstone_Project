@@ -3,6 +3,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from .forms import UserUpdateForm, ProfileUpdateForm
+from .forms import RegistrationForm
 
 # Create your views here.
 def register(request):
@@ -10,17 +11,19 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)  # Automatically log the user in
-            return redirect('home')  # Redirect to homepage or dashboard
+            login(request, user)  # Log the user in after registration
+            return redirect('home')
     else:
         form = RegistrationForm()
-    return render(request, 'register.html', {'form': form})
+    
+    return render(request, 'accounts/register.html', {'form': form})
 
 @login_required
 def profile(request):
-    if request.methord == 'POST':
+    if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
-        p_form =ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)  # Include request.FILES
+
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
@@ -33,5 +36,6 @@ def profile(request):
         'u_form': u_form,
         'p_form': p_form
     }
-    return render(request, 'accounts/profile.html', context)
+
+    return render(request, 'profile.html', context)
 

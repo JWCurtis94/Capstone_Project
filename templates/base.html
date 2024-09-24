@@ -1,12 +1,18 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W2W F1 Sim Racing League</title>
+    <title>{% block title %}Wheel2Wheel{% endblock %}</title>
+
+    {% load static %} <!-- Load the static tag library -->
+
+    <!-- Add any additional CSS here -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Block for custom CSS in specific pages -->
+    {% block extra_css %}{% endblock %}
 </head>
 <body>
     <!-- Header with Navigation -->
@@ -19,47 +25,45 @@
             </div>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
-                
+
+                <!-- Show "Standings" and "FIA" links only if the user is authenticated -->
                 {% if user.is_authenticated %}
-                    <!-- Links visible to logged-in users -->
+                    <li><a href="{% url 'standings' %}">Standings</a></li>
                     <li><a href="{% url 'fia' %}">FIA</a></li>
-                    <li><a href="{% url 'calendar' %}">Calendar</a></li>
-                    <li><a href="{% url 'standings' %}">Standings & Statistics</a></li>
-                    <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="{% url 'account_logout' %}">Logout</a></li>
+                {% endif %}
+
+                <li><a href="{% url 'about' %}">About</a></li>
+
+                <!-- Show "Register" and "Login" links only if the user is not authenticated -->
+                {% if not user.is_authenticated %}
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
                 {% else %}
-                    <!-- Links visible to guests (not logged in) -->
-                    <li><a href="{% url 'account_signup' %}">Register</a></li>
-                    <li><a href="{% url 'account_login' %}">Login</a></li>
+                    <!-- Show "Logout" link if the user is authenticated -->
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
                 {% endif %}
             </ul>
         </nav>
     </header>
-    
 
-    <!-- Hero Section with Video -->
-    <section class="hero" aria-label="Hero Section">
-        <video autoplay muted loop>
-            <source src="{% static 'assets/hero-video.mp4' %}" type="video/mp4">
-            <p>Your browser does not support the video tag.</p>
-        </video>
-        <div class="hero-text">
-            <h1>Welcome to W2W F1 Sim Racing League</h1>
-            <p>Experience the thrill of racing from wheel to wheel.</p>
-        </div>
-    </section>
-    <!-- Footer section-->
-    <footer aria-label="Footer">
-        <div class="social-links">
-            <a href="https://discord.gg/H4u9wrQYU8" target="_blank" aria-label="Discord">
-                <img src="{% static 'assets/discord.png' %}" alt="Discord Icon">
-            </a>
-            <a href="https://www.youtube.com/@W2WSimRacing" target="_blank" aria-label="YouTube">
-                <img src="{% static 'assets/youtube.png' %}" alt="YouTube Icon">
-            </a>
-        </div>
+    <!-- Main Content Block -->
+    <main>
+        {% block content %}
+        <!-- Content will be injected here by other templates -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <a href="https://discord.com" target="_blank">
+            <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://youtube.com" target="_blank">
+            <i class="fab fa-youtube"></i>
+        </a>
     </footer>
 
-    <script src="{% static 'js/script.js' %}"></script>
+    <!-- Block for custom JavaScript in specific pages -->
+    {% block extra_js %}{% endblock %}
 </body>
 </html>

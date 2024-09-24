@@ -89,6 +89,7 @@ button {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 5px; /* Add consistent border-radius */
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -104,6 +105,7 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #f2f2f2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Consistent shadow */
 }
 
 .form-container input {
