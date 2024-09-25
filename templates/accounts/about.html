@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+About Us | Wheel2Wheel Racing
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>About Wheel2Wheel Racing</h1>
+
+    <div class="about-section">
+        <p class="about-text">
+            Welcome to <span class="highlight">Wheel2Wheel Racing</span>, the premier online F1 Sim racing league for competitive racers and enthusiasts alike. Our community is built on the passion for <span class="highlight">precision driving</span>, <span class="highlight">sportsmanship</span>, and the ultimate simulation experience.
+        </p>
+
+        <p class="about-text">
+            Whether you're a seasoned pro or just getting started, W2W offers a platform where drivers can race wheel-to-wheel in the most immersive and realistic racing environment available today. Our league is designed to provide a fair, fun, and competitive environment where racers can challenge themselves and improve their skills.
+        </p>
+    </div>
+
+    <h2 class="team-heading">Meet the Team</h2>
+
+    <div class="team">
+        <!-- First row of team members -->
+        <div class="team-member">
+            <img src="{% static 'images/team1.jpg' %}" alt="John Curtis - Founder" class="team-photo">
+            <h3>John Curtis</h3>
+            <p>Founder & Lead Organizer</p>
+        </div>
+
+        <div class="team-member">
+            <img src="{% static 'images/team2.jpg' %}" alt="Jane Doe - Community Manager" class="team-photo">
+            <h3>Jane Doe</h3>
+            <p>Community Manager</p>
+        </div>
+
+        <div class="team-member">
+            <img src="{% static 'images/team3.jpg' %}" alt="Mike Smith - Race Director" class="team-photo">
+            <h3>Mike Smith</h3>
+            <p>Race Director</p>
+        </div>
+
+        <!-- Second row of team members -->
+        <div class="team-member">
+            <img src="{% static 'images/team4.jpg' %}" alt="Sarah Lee - Marketing Lead" class="team-photo">
+            <h3>Sarah Lee</h3>
+            <p>Marketing Lead</p>
+        </div>
+
+        <div class="team-member">
+            <img src="{% static 'images/team5.jpg' %}" alt="David Brown - Technical Director" class="team-photo">
+            <h3>David Brown</h3>
+            <p>Technical Director</p>
+        </div>
+
+        <div class="team-member">
+            <img src="{% static 'images/team6.jpg' %}" alt="Emily Clark - Operations Manager" class="team-photo">
+            <h3>Emily Clark</h3>
+            <p>Operations Manager</p>
+        </div>
+
+        <!-- Third row of team members -->
+        <div class="team-member">
+            <img src="{% static 'images/team7.jpg' %}" alt="James White - Media Relations" class="team-photo">
+            <h3>James White</h3>
+            <p>Media Relations</p>
+        </div>
+
+        <div class="team-member">
+            <img src="{% static 'images/team8.jpg' %}" alt="Sophie Turner - Content Creator" class="team-photo">
+            <h3>Sophie Turner</h3>
+            <p>Content Creator</p>
+        </div>
+
+        <div class="team-member">
+            <img src="{% static 'images/team9.jpg' %}" alt="Alex Green - Data Analyst" class="team-photo">
+            <h3>Alex Green</h3>
+            <p>Data Analyst</p>
+        </div>
+
+        <div class="team-member">
+            <img src="{% static 'images/team10.jpg' %}" alt="Lisa Black - Event Coordinator" class="team-photo">
+            <h3>Lisa Black</h3>
+            <p>Event Coordinator</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

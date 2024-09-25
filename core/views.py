@@ -55,3 +55,6 @@ def standings(request):
 
 def fia(request):
     return render(request, 'fia.html')
+
+def about(request):
+    return render(request, 'accounts/about.html')

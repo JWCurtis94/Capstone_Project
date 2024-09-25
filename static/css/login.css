@@ -5,6 +5,7 @@ body {
     color: #ffffff; /* White text for readability */
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 h1 {
