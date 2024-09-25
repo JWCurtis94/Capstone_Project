@@ -1,14 +1,48 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="profile-container">
     <h2>{{ user.username }}'s Profile</h2>
-    <img src="{{ user.profile.profile_picture.url }}" alt="{{ user.username }}'s profile picture">
-    <form method="POST" enctype="multipart/form-data">
+
+    <!-- Profile Image -->
+    <div class="profile-image">
+        <img src="{% if user.profile.image %}{{ user.profile.image.url }}{% else %}{% static 'assets/default-placeholder.webp' %}{% endif %}" 
+             alt="{{ user.username }}'s profile picture" 
+             class="profile-picture" 
+             onerror="this.onerror=null; this.src='{% static 'assets/default-placeholder.webp' %}';">
+    </div>
+
+    <!-- Update Profile Form -->
+    <form method="POST" enctype="multipart/form-data" class="profile-form">
         {% csrf_token %}
-        {{ u_form.as_p }}
-        {{ p_form.as_p }}
-        <button type="submit">Update</button>
+
+        <!-- Display Form Errors -->
+        {% if u_form.errors or p_form.errors %}
+            <div class="form-errors">
+                <ul>
+                    {% for field, errors in u_form.errors.items %}
+                        <li>{{ field }}: {{ errors }}</li>
+                    {% endfor %}
+                    {% for field, errors in p_form.errors.items %}
+                        <li>{{ field }}: {{ errors }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <!-- User Information Form Fields -->
+        <div class="user-info">
+            {{ u_form.as_p }}
+        </div>
+
+        <!-- Profile Information Form Fields -->
+        <div class="profile-info">
+            {{ p_form.as_p }}
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Update Profile</button>
     </form>
 </div>
 {% endblock %}

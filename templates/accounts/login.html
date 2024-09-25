@@ -13,17 +13,17 @@
 <div class="login-container">
     <h1>{% trans "Sign In" %}</h1>
 
-    {% get_providers as socialaccount_providers %}
-    {% if socialaccount_providers %}
-        <div class="socialaccount_providers">
-            {% include "socialaccount/snippets/login_extra.html" %}
-        </div>
-    {% endif %}
-
-    <form method="post" action="{% url 'account_login' %}">
+    <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Sign In</button>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+        </div>
+        <button type="submit">Log In</button>
     </form>
 </div>
 {% endblock content %}

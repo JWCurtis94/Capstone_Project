@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-jwcurtis94-capstoneproj-2igqtdgi75h.ws.codeinstitute-ide.net',
+    '8000-jwcurtis94-capstoneproj-mtjc4rk1nhn.ws.codeinstitute-ide.net',
     '8000-jwcurtis94-capstoneproj-szixg7vt8q9.ws.codeinstitute-ide.net',
     'w2w-791ab20c5eb9.herokuapp.com',
     '8000-jwcurtis94-capstoneproj-din15cczels.ws.codeinstitute-ide.net',
@@ -42,12 +42,14 @@ ALLOWED_HOSTS = [
     '8000-jwcurtis94-capstoneproj-i8y3k7otx9i.ws.codeinstitute-ide.net',
     '8000-jwcurtis94-capstoneproj-fj4am88dcuv.ws.codeinstitute-ide.net',
     '3000-jwcurtis94-capstoneproj-fj4am88dcuv.ws.codeinstitute-ide.net',
+    '8000-jwcurtis94-capstoneproj-mtjc4rk1nhn.ws.codeinstitute-ide.net',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-jwcurtis94-capstoneproj-4bdzr955vpk.ws.codeinstitute-ide.net',
     'https://8000-jwcurtis94-capstoneproj-fj4am88dcuv.ws.codeinstitute-ide.net',
     'https://w2w-791ab20c5eb9.herokuapp.com',
+    'https://8000-jwcurtis94-capstoneproj-mtjc4rk1nhn.ws.codeinstitute-ide.net',
 ]
 
 
@@ -149,10 +151,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SITE_ID = 1
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -165,6 +168,8 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',  # Default backend
     'allauth.account.auth_backends.AuthenticationBackend',  # Allauth backend
 )
+
+LOGIN_REDIRECT_URL = "/"
 
 # Social account providers configuration (Google, Facebook)
 SOCIALACCOUNT_PROVIDERS = {

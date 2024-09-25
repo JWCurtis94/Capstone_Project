@@ -35,7 +35,7 @@ urlpatterns = [
     path('accounts/login/', include('allauth.urls')),
     path('fia/', core_views.fia, name='fia'),
     path('calendar/', core_views.fia, name='calendar'),
-    path('about/', core_views.about, name='about'),  # Update to reference the correct 'about' view
+    path('about/', core_views.about, name='about'),
 ]
 
 if settings.DEBUG:

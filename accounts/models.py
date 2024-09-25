@@ -3,11 +3,10 @@ from django.contrib.auth.models import User
 from PIL import Image  
 
 # Create your models here.
-
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='default.jpg', upload_to='profile_pics')  # Add the image field
-    bio = models.TextField(blank=True, null=True)  # Example additional field
+    image = models.ImageField(upload_to='profile_pics', null=True, blank=True)  # Remove default image
+    bio = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return f'{self.user.username} Profile'
