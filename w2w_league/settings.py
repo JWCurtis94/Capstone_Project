@@ -40,10 +40,14 @@ ALLOWED_HOSTS = [
     '8000-jwcurtis94-capstoneproj-7oceb1xcufc.ws.codeinstitute-ide.net',
     '8000-jwcurtis94-capstoneproj-4bdzr955vpk.ws.codeinstitute-ide.net',
     '8000-jwcurtis94-capstoneproj-i8y3k7otx9i.ws.codeinstitute-ide.net',
+    '8000-jwcurtis94-capstoneproj-fj4am88dcuv.ws.codeinstitute-ide.net',
+    '3000-jwcurtis94-capstoneproj-fj4am88dcuv.ws.codeinstitute-ide.net',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-jwcurtis94-capstoneproj-4bdzr955vpk.ws.codeinstitute-ide.net',
+    'https://8000-jwcurtis94-capstoneproj-fj4am88dcuv.ws.codeinstitute-ide.net',
+    'https://w2w-791ab20c5eb9.herokuapp.com',
 ]
 
 
