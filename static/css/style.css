@@ -6,6 +6,7 @@ body {
     scroll-behavior: smooth;
     background-color: #ffffff;
     color: #333;
+    
 }
 
 /* Navigation Bar */
@@ -21,6 +22,7 @@ nav {
     justify-content: space-between; /* Logo on left, links on right */
     align-items: center;
     padding: 10px 30px; /* Smaller height and padding */
+    overflow-x: hidden;
 }
 
 nav ul {
@@ -30,6 +32,8 @@ nav ul {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 nav li {
@@ -48,6 +52,10 @@ nav a {
 nav a:hover {
     color: #f0c808; /* Yellow on hover */
     transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+* {
+    box-sizing: border-box;
 }
 
 /* Logo */

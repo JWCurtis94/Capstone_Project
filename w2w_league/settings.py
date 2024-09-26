@@ -42,7 +42,7 @@ ALLOWED_HOSTS = [
     '8000-jwcurtis94-capstoneproj-i8y3k7otx9i.ws.codeinstitute-ide.net',
     '8000-jwcurtis94-capstoneproj-fj4am88dcuv.ws.codeinstitute-ide.net',
     '3000-jwcurtis94-capstoneproj-fj4am88dcuv.ws.codeinstitute-ide.net',
-    '8000-jwcurtis94-capstoneproj-mtjc4rk1nhn.ws.codeinstitute-ide.net',
+    '8000-jwcurtis94-capstoneproj-kmjzcelijgy.ws.codeinstitute-ide.net',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
