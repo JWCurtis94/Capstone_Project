@@ -94,12 +94,14 @@ input[type="password"]:focus {
 input[type="text"]:hover,
 input[type="email"]:hover,
 input[type="password"]:hover {
+    border-color: #4a90e2;
     background-color: #f0f0f0;
     border-color: #bbb;
 }
 
 /* Style the placeholder text to be more visible */
 input::placeholder {
+    border-color: #4a90e2;
     color: #999;
     opacity: 1;
     font-size: 0.9rem;
@@ -126,7 +128,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #3a7bc8;
+    background-color:#4a90e2;
     transform: translateY(-2px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
