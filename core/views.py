@@ -4,6 +4,8 @@ from .models import Race, RaceResult
 from .forms import RaceResultForm
 from django.db.models import Sum, F, Case, When, IntegerField
 from django.utils import timezone
+from .models import Verdict
+from .forms import IncidentTicketForm
 
 def home(request):
     upcoming_races = Race.objects.filter(date__gte=timezone.now()).order_by('date')[:5]
@@ -58,3 +60,15 @@ def fia(request):
 
 def about(request):
     return render(request, 'accounts/about.html')
+
+def fia_view(request):
+    verdicts = Verdict.objects.all()
+    if request.method == 'POST':
+        form = IncidentTicketForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('fia')  # Redirect to the FIA page after successful form submission
+    else:
+        form = IncidentTicketForm()
+    
+    return render(request, 'fia.html', {'verdicts': verdicts, 'form': form})

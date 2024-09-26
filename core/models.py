@@ -21,3 +21,25 @@ class RaceResult(models.Model):
 
     def __str__(self):
         return f"{self.race.name} - {self.driver.username} - P{self.position}"
+
+    # models.py
+
+from django.db import models
+
+class Verdict(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+class IncidentTicket(models.Model):
+    username = models.CharField(max_length=100)
+    email = models.EmailField()
+    race_name = models.CharField(max_length=255)
+    incident_description = models.TextField()
+    date_submitted = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.username} - {self.race_name}"
