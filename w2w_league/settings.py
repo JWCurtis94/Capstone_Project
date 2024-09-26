@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-jwcurtis94-capstoneproj-4snief4bou3.ws.codeinstitute-ide.net',
+    '8000-jwcurtis94-capstoneproj-g6q9pdembn0.ws.codeinstitute-ide.net',
     '8000-jwcurtis94-capstoneproj-szixg7vt8q9.ws.codeinstitute-ide.net',
     'w2w-791ab20c5eb9.herokuapp.com',
     '8000-jwcurtis94-capstoneproj-din15cczels.ws.codeinstitute-ide.net',
@@ -46,7 +46,7 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-jwcurtis94-capstoneproj-4bdzr955vpk.ws.codeinstitute-ide.net',
+    'https://8000-jwcurtis94-capstoneproj-g6q9pdembn0.ws.codeinstitute-ide.net',
     'https://8000-jwcurtis94-capstoneproj-fj4am88dcuv.ws.codeinstitute-ide.net',
     'https://w2w-791ab20c5eb9.herokuapp.com',
     'https://8000-jwcurtis94-capstoneproj-mtjc4rk1nhn.ws.codeinstitute-ide.net',
@@ -170,6 +170,7 @@ AUTHENTICATION_BACKENDS = (
 )
 
 LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = '/'
 
 # Social account providers configuration (Google, Facebook)
 SOCIALACCOUNT_PROVIDERS = {
