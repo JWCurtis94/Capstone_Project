@@ -53,7 +53,7 @@ def standings(request):
     return render(request, 'core/standings.html', {'standings': results})
 
 def fia(request):
-    return render(request, 'fia.html')
+    return render(request, 'core/fia.html')
 
 def about(request):
     return render(request, 'accounts/about.html')
@@ -64,8 +64,12 @@ def fia_view(request):
         form = IncidentTicketForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('fia')
+            return redirect('core/fia')
     else:
         form = IncidentTicketForm()
     
-    return render(request, 'fia.html', {'verdicts': verdicts, 'form': form})
+    return render(request, 'core/fia.html', {'verdicts': verdicts, 'form': form})
+
+def calendar(request):
+    upcoming_races = Race.objects.filter(date__gte=timezone.now()).order_by('date')
+    return render(request, 'core/calendar.html', {'upcoming_races': upcoming_races})

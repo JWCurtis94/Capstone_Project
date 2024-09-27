@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIA Page - Wheel2Wheel</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <!-- FIA Page Content -->
+    <section class="fia-page">
+        <div class="container">
+
+            <!-- Rules Section -->
+            <div class="fia-penalty-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Collision Level</th>
+                            <th>Partly at Fault</th>
+                            <th>Wholly at Fault</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Minor</td>
+                            <td>Warning</td>
+                            <td>3 Seconds + 1pp</td>
+                        </tr>
+                        <tr>
+                            <td>Moderate</td>
+                            <td>5 Seconds + 1pp</td>
+                            <td>10 Seconds + 2pp</td>
+                        </tr>
+                        <tr>
+                            <td>Major</td>
+                            <td>10 Seconds + 2pp</td>
+                            <td>15 Seconds + 3pp</td>
+                        </tr>
+                        <tr>
+                            <td>Critical</td>
+                            <td>15 Seconds + 3pp</td>
+                            <td>20 Seconds + 5pp</td>
+                        </tr>
+                        <tr>
+                            <td>Deliberate</td>
+                            <td>League Ban</td>
+                            <td>League Ban</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Minor</strong>: Very slight contact, taps, pushed off track. No damage involved</p>
+                <p><strong>Moderate</strong>: Spins, hit from behind. Incidents with damage involved</p>
+                <p><strong>Major</strong>: Incidents resulting in multiple collisions</p>
+                <p><strong>Critical</strong>: Crash resulting in a DNF</p>
+                <p><strong>(3 Warnings will result in a 10 Second time penalty and 2pp applied in the following race)</strong></p>
+
+                <h3>Additional Penalties:</h3>
+                <ul>
+                    <li>Readying up early on the grid: 2pp</li>
+                    <li>Quitting on track: 2pp</li>
+                    <li>Crossing pit lane entry/exit: 5 Seconds 1pp</li>
+                    <li>Ignoring blue flags: 5 Seconds 1pp</li>
+                    <li>Deliberate corner cutting (Quali): 5 Seconds 1pp</li>
+                    <li>Resetting to track: 10 Seconds 2pp</li>
+                    <li>Overtaking under SC: 10 Seconds 2pp</li>
+                    <li>Causing a driver to lift during Quali: Q3 Ban</li>
+                    <li>Causing a driver to take avoiding action during Quali: Q2 Ban</li>
+                    <li>Causing contact with another driver during Quali: Quali Ban</li>
+                </ul>
+
+                <h3>Penalty Points Thresholds:</h3>
+                <ul>
+                    <li><strong>Penalty Points Received 8</strong>: Quali Ban</li>
+                    <li><strong>Penalty Points Received 12</strong>: Race Ban and a WDC and WCC 25 Point Deduction</li>
+                    <li><strong>Penalty Points Received 15</strong>: WDC and WCC 50 Point Deduction and a Seat Review from Owners</li>
+                </ul>
+            </div>
+            CSS Code:
+
+            <!-- Incident Ticket Submission -->
+            <section id="submit-ticket" class="ticket-section">
+                <h2>Submit a Race Incident Ticket</h2>
+                <p>If you were involved in or witnessed an incident during a race, please submit a ticket for FIA review:</p>
+
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Submit Ticket</button>
+                </form>
+            </section>
+
+        </div>
+    </section>
+</body>
+</html>
