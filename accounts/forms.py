@@ -21,8 +21,3 @@ class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['username', 'email']
-
-class IncidentForm(forms.ModelForm):
-    class Meta:
-        model = Incident
-        fields = ['title', 'description', 'race_number']

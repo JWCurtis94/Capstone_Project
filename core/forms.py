@@ -14,3 +14,8 @@ class IncidentTicketForm(forms.ModelForm):
         widgets = {
             'incident_description': forms.Textarea(attrs={'rows': 5}),
         }
+
+class IncidentForm(forms.ModelForm):
+    class Meta:
+        model = Incident
+        fields = ['title', 'description', 'race_number']
