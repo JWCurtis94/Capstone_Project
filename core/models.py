@@ -22,14 +22,10 @@ class RaceResult(models.Model):
     def __str__(self):
         return f"{self.race.name} - {self.driver.username} - P{self.position}"
 
-    # models.py
-
-from django.db import models
-
 class Verdict(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=200)
     description = models.TextField()
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateField()
 
     def __str__(self):
         return self.title
