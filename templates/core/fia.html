@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIA Page - Wheel2Wheel</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <!-- FIA Page Content -->
+{% block content %}
     <section class="fia-page">
         <div class="container">
 
@@ -79,7 +70,6 @@
                     <li><strong>Penalty Points Received 15</strong>: WDC and WCC 50 Point Deduction and a Seat Review from Owners</li>
                 </ul>
             </div>
-            CSS Code:
 
             <!-- Incident Ticket Submission -->
             <section id="submit-ticket" class="ticket-section">
@@ -92,8 +82,7 @@
                     <button type="submit">Submit Ticket</button>
                 </form>
             </section>
-
         </div>
     </section>
-</body>
-</html>
+
+{% endblock %}
