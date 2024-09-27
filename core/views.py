@@ -1,11 +1,9 @@
-from django.shortcuts import render, redirect  # Added redirect import
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Race, RaceResult
-from .forms import RaceResultForm
+from .models import Race, RaceResult, Verdict
+from .forms import RaceResultForm, IncidentTicketForm
 from django.db.models import Sum, F, Case, When, IntegerField
 from django.utils import timezone
-from .models import Verdict
-from .forms import IncidentTicketForm
 
 def home(request):
     upcoming_races = Race.objects.filter(date__gte=timezone.now()).order_by('date')[:5]
@@ -43,8 +41,7 @@ def standings(request):
             When(position=12, then=1),
             default=0,
             output_field=IntegerField()
-            )
-        ) + Sum(
+        )) + Sum(
             Case(
                 When(fastest_lap=True, then=1),
                 default=0,
@@ -67,7 +64,7 @@ def fia_view(request):
         form = IncidentTicketForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('fia')  # Redirect to the FIA page after successful form submission
+            return redirect('fia')
     else:
         form = IncidentTicketForm()
     
