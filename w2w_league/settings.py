@@ -49,7 +49,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8000-jwcurtis94-capstoneproj-g6q9pdembn0.ws.codeinstitute-ide.net',
     'https://8000-jwcurtis94-capstoneproj-fj4am88dcuv.ws.codeinstitute-ide.net',
     'https://w2w-791ab20c5eb9.herokuapp.com',
-    'https://8000-jwcurtis94-capstoneproj-mtjc4rk1nhn.ws.codeinstitute-ide.net',
+    'https://8000-jwcurtis94-capstoneproj-mlmxty6d3wx.ws.codeinstitute-ide.net',
 ]
 
 

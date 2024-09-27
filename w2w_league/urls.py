@@ -33,7 +33,7 @@ urlpatterns = [
     path('standings/', core_views.standings, name='standings'),
     path('accounts/', include('allauth.urls')),
     path('accounts/login/', include('allauth.urls')),
-    path('fia/', core_views.fia, name='fia'),
+    path('fia/', views.fia_page, name='fia_page'),
     path('calendar/', core_views.fia, name='calendar'),
     path('about/', core_views.about, name='about'),
 ]

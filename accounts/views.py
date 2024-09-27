@@ -47,3 +47,23 @@ def profile(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def fia_page(request):
+    # Fetch FIA verdicts from the database
+    verdicts = Verdict.objects.all()
+
+    # Handle form submission
+    if request.method == 'POST':
+        form = IncidentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Redirect or give feedback upon success
+    else:
+        form = IncidentForm()
+
+    context = {
+        'verdicts': verdicts,
+        'form': form,
+    }
+
+    return render(request, 'fia_page.html', context)
