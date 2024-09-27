@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-jwcurtis94-capstoneproj-g6q9pdembn0.ws.codeinstitute-ide.net',
+    '8000-jwcurtis94-capstoneproj-mlmxty6d3wx.ws.codeinstitute-ide.net',
     '8000-jwcurtis94-capstoneproj-szixg7vt8q9.ws.codeinstitute-ide.net',
     'w2w-791ab20c5eb9.herokuapp.com',
     '8000-jwcurtis94-capstoneproj-din15cczels.ws.codeinstitute-ide.net',
