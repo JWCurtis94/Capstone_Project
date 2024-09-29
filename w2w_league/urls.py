@@ -17,28 +17,46 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
-from django.contrib.auth import views as auth_views
 from django.conf import settings
+from django.contrib.auth import views as auth_views
 from core import views as core_views  # Using core_views to reference core views
 from accounts import views as accounts_views
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import messages
 
+# Custom login and logout views to include messages
+class CustomLoginView(LoginView):
+    template_name = 'accounts/login.html'  # Ensure this points to the correct template
+
+    def form_valid(self, form):
+        messages.success(self.request, "You have successfully logged in!")
+        return super().form_valid(form)
+
+class CustomLogoutView(LogoutView):
+    template_name = 'accounts/logout.html'  # Ensure this points to the correct template
+
+    def dispatch(self, request, *args, **kwargs):
+        messages.success(self.request, "You have successfully logged out!")
+        return super().dispatch(request, *args, **kwargs)
+
+# URL Patterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', core_views.home, name='home'),
     path('register/', accounts_views.register, name='register'),
-    path('login/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='accounts/logout.html'), name='logout'),
+    
+    # Use CustomLoginView and CustomLogoutView for login and logout
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', CustomLogoutView.as_view(), name='logout'),
     path('profile/', accounts_views.profile, name='profile'),
     path('submit-result/', core_views.submit_result, name='submit_result'),
     path('standings/', core_views.standings, name='standings'),
     path('accounts/', include('allauth.urls')),
-    path('accounts/login/', include('allauth.urls')),
     path('fia/', core_views.fia, name='fia'),
     path('calendar/', core_views.calendar, name='calendar'),
     path('about/', core_views.about, name='about'),
 ]
 
+# Serve media files during development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
