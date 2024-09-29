@@ -44,10 +44,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', core_views.home, name='home'),
     path('register/', accounts_views.register, name='register'),
-    
-    # Use CustomLoginView and CustomLogoutView for login and logout
     path('login/', CustomLoginView.as_view(), name='login'),
     path('logout/', CustomLogoutView.as_view(), name='logout'),
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('profile/', accounts_views.profile, name='profile'),
     path('submit-result/', core_views.submit_result, name='submit_result'),
     path('standings/', core_views.standings, name='standings'),
@@ -55,6 +55,7 @@ urlpatterns = [
     path('fia/', core_views.fia, name='fia'),
     path('calendar/', core_views.calendar, name='calendar'),
     path('about/', core_views.about, name='about'),
+    path('reaction-game/', core_views.reaction_game, name='reaction_game'),
 ]
 
 # Serve media files during development

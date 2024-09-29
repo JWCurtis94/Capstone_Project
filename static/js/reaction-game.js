@@ -1,35 +1,52 @@
-let startTime;
+let gameStarted = false;
+let lightGreen = false;
 let reactionTimeout;
+let startTime;
 
 function startGame() {
-    document.getElementById('reaction-time').textContent = '';
-    document.getElementById('start-btn').disabled = true;
-    document.getElementById('light').style.backgroundColor = 'red';
-    document.getElementById('light').textContent = 'Red';
+    const light = document.getElementById("light");
+    const reactionTimeDisplay = document.getElementById("reaction-time");
+    const startButton = document.getElementById("start-btn");
 
-    // Random delay before the light turns green
-    const delay = Math.floor(Math.random() * 5000) + 2000; // Between 2 to 7 seconds
+    if (!gameStarted) {
+        // Start game: reset all previous states
+        gameStarted = true;
+        lightGreen = false;
+        startButton.textContent = "Get Ready...";
+        light.style.backgroundColor = "red";
+        light.textContent = "Red";
+        reactionTimeDisplay.textContent = "";
 
-    reactionTimeout = setTimeout(() => {
-        document.getElementById('light').style.backgroundColor = 'green';
-        document.getElementById('light').textContent = 'Green';
-        startTime = Date.now();
-        document.body.onclick = recordReaction;
-    }, delay);
-}
+        const delay = Math.random() * 3000 + 2000;  // Random delay between 2-5 seconds
+        reactionTimeout = setTimeout(() => {
+            lightGreen = true;
+            light.style.backgroundColor = "green";
+            light.textContent = "Go!";
+            startTime = Date.now();
+            startButton.textContent = "Click Now!";
+        }, delay);
 
-function recordReaction() {
-    if (document.getElementById('light').style.backgroundColor === 'green') {
+    } else if (gameStarted && lightGreen) {
+        // User clicked when the light is green, calculate reaction time
         const reactionTime = Date.now() - startTime;
-        document.getElementById('reaction-time').textContent = `Your reaction time: ${reactionTime} ms`;
-    } else {
-        document.getElementById('reaction-time').textContent = `Too early! Wait for green!`;
+        reactionTimeDisplay.textContent = `Your reaction time: ${reactionTime} ms`;
+        resetGame();
+    } else if (gameStarted && !lightGreen) {
+        // User clicked too early
+        reactionTimeDisplay.textContent = "Too early! Wait for the green light!";
+        resetGame();
     }
-    resetGame();
 }
 
 function resetGame() {
-    document.body.onclick = null; // Remove the click handler
-    document.getElementById('start-btn').disabled = false;
     clearTimeout(reactionTimeout);
+    gameStarted = false;
+    lightGreen = false;
+
+    const startButton = document.getElementById("start-btn");
+    const light = document.getElementById("light");
+
+    startButton.textContent = "Start Game";  // Reset button text
+    light.style.backgroundColor = "red";  // Reset light to red
+    light.textContent = "Red";  // Reset light text to "Red"
 }

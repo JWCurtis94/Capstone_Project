@@ -363,6 +363,7 @@ footer i {
     text-align: center;
     background-attachment: fixed; /* Parallax effect */
     background-size: cover;
+    padding-bottom: 50px;
 }
 
 .hero img {
@@ -529,46 +530,105 @@ h1 {
     text-align: center;
     padding: 30px;
     margin: 50px auto;
+    margin-top: 100px;
     max-width: 600px;
     border: 2px solid #ff0000;
     border-radius: 10px;
-    background-color: #121212;
+    background-color: #1e1e1e;
     color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .reaction-game {
+        margin-top: 50px;
+        padding: 20px;
+        width: 90%;
+    }
 }
 
 .reaction-game h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #f0c808;
+    margin-bottom: 15px;
 }
 
+.reaction-game p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+/* Light Container */
+.lights-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+/* Light Styles */
 .light {
-    font-size: 2rem;
-    margin: 20px;
-    padding: 10px;
-    border: 2px solid #fff;
-    border-radius: 5px;
-    background-color: red;
+    font-size: 2.5rem;
+    padding: 20px;
+    border-radius: 50%; /* Make the light circular */
+    width: 150px;
+    height: 150px;
+    background-color: #ff0000; /* Start with red */
     color: white;
-    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    font-weight: bold;
 }
 
+.light.active {
+    background-color: #00ff00; /* Green when active */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* Stronger glow when active */
+    transform: scale(1.15); /* Larger scaling effect */
+}
+
+/* Start Button */
 button {
     background-color: #ff0000;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 30px;
+    font-size: 1.4rem;
+    font-weight: bold;
     border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 25px;
 }
 
 button:hover {
     background-color: #f0c808;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
 }
 
+/* Reaction Time Display */
 #reaction-time {
-    font-size: 1.5rem;
-    margin-top: 20px;
+    font-size: 1.8rem;
+    margin-top: 25px;
+    color: #00ff00; /* Bright green for result */
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add subtle text shadow */
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

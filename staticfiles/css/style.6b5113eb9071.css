@@ -397,7 +397,7 @@ footer i {
 .about-section {
     position: relative; /* Allow overlaying content */
     padding: 50px;
-    background: url('/static/assets/about.webp') no-repeat center center;
+    background: url("/static/assets/about.ba967e782bd1.webp") no-repeat center center;
     background-size: cover;
     text-align: center; /* Center-align the text */
     max-width: 800px;

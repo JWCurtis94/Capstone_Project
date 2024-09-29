@@ -4,6 +4,8 @@ from .models import Race, RaceResult, Verdict
 from .forms import RaceResultForm, IncidentTicketForm
 from django.db.models import Sum, F, Case, When, IntegerField
 from django.utils import timezone
+from . import views
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     upcoming_races = Race.objects.filter(date__gte=timezone.now()).order_by('date')[:5]
@@ -73,3 +75,7 @@ def fia_view(request):
 def calendar(request):
     upcoming_races = Race.objects.filter(date__gte=timezone.now()).order_by('date')
     return render(request, 'core/calendar.html', {'upcoming_races': upcoming_races})
+
+@login_required
+def reaction_game(request):
+    return render(request, 'reaction_game.html')

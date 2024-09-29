@@ -4,7 +4,7 @@
 {% block content %}
 <!-- Hero Section -->
 <div class="hero">
-    <img src="{% static '/assets/hero.webp' %}" alt="F1 Sim Racing">
+    <img src="{% static 'assets/hero.webp' %}" alt="F1 Sim Racing">
     <div class="hero-text">
         Welcome to <span class="highlight">Wheel2Wheel Racing</span>, where passion meets precision.
         Join us on the grid for the ultimate F1 Sim Racing experience.
@@ -12,12 +12,25 @@
 </div>
 
 <!-- Reaction Game Section -->
-<div class="reaction-game"></div>
-    <h2>Test Your Reaction Time!</h2>
-    <p>Wait for the lights to turn green, then press the button as fast as you can!</p>
-    <div class="light" id="light">Red</div>
-    <button id="start-btn" onclick="startGame()">Start Game</button>
-    <p id="reaction-time"></p>
+<div class="reaction-game">
+    {% if user.is_authenticated %}
+        <h2>Test Your F1 Reaction Time!</h2>
+        <p>Wait for the lights to turn green, then press the button as fast as you can!</p>
+
+        <!-- Game Lights -->
+        <div class="lights-container">
+            <div class="light" id="light">Red</div>
+        </div>
+
+        <!-- Start Game Button -->
+        <button id="start-btn" onclick="startGame()">Start Game</button>
+
+        <!-- Display Reaction Time -->
+        <p id="reaction-time"></p>
+
+    {% else %}
+        <p><a href="{% url 'login' %}">Log in</a> or <a href="{% url 'register' %}">Sign up</a> to play the Reaction Game!</p>
+    {% endif %}
 </div>
 
 <!-- About Section -->
@@ -40,78 +53,10 @@
     <h2 class="team-heading">Meet The Grid</h2>
 
     <div class="team">
-
-        <!-- Team Member 1 -->
-        <div class="team-member">
-            <img src="{% static 'images/team1.jpg' %}" alt="Jonas - Founder" class="team-photo">
-            <h3>SF1 | Jonas</h3>
-            <p>Alpine Team Principal</p>
-        </div>
-
-        <!-- Team Member 2 -->
-        <div class="team-member">
-            <img src="{% static 'images/team2.jpg' %}" alt="Jane Doe - Community Manager" class="team-photo">
-            <h3>W2W Twooj Stary</h3>
-            <p>Aston Martin Team Principal</p>
-        </div>
-
-        <!-- Team Member 3 -->
-        <div class="team-member">
-            <img src="{% static 'images/team3.jpg' %}" alt="Mike Smith - Race Director" class="team-photo">
-            <h3>ibrahimm</h3>
-            <p>Ferrari Team Principal</p>
-        </div>
-
-        <!-- Team Member 4 -->
-        <div class="team-member">
-            <img src="{% static 'images/team4.jpg' %}" alt="Sarah Lee - Marketing Lead" class="team-photo">
-            <h3>Duke</h3>
-            <p>Haas Team Principal</p>
-        </div>
-
-        <!-- Team Member 5 -->
-        <div class="team-member">
-            <img src="{% static 'images/team5.jpg' %}" alt="David Brown - Technical Director" class="team-photo">
-            <h3>W2W_JamieHester</h3>
-            <p>McLaren Team Principal &amp; League Founder</p>
-        </div>
-
-        <!-- Team Member 6 -->
-        <div class="team-member">
-            <img src="{% static 'images/team6.jpg' %}" alt="Emily Clark - Operations Manager" class="team-photo">
-            <h3>Curtis94</h3>
-            <p>Mercedes Team Principal</p>
-        </div>
-
-        <!-- Team Member 7 -->
-        <div class="team-member">
-            <img src="{% static 'images/team7.jpg' %}" alt="James White - Media Relations" class="team-photo">
-            <h3>W2W_Tw1ggyT</h3>
-            <p>VCARB Team Principal</p>
-        </div>
-
-        <!-- Team Member 8 -->
-        <div class="team-member">
-            <img src="{% static 'images/team8.jpg' %}" alt="Sophie Turner - Content Creator" class="team-photo">
-            <h3>Lmboy</h3>
-            <p>Red Bull Team Principal</p>
-        </div>
-
-        <!-- Team Member 9 -->
-        <div class="team-member">
-            <img src="{% static 'images/team9.jpg' %}" alt="Alex Green - Data Analyst" class="team-photo">
-            <h3>{SET}Harv</h3>
-            <p>Stake F1 Team Principal</p>
-        </div>
-
-        <!-- Team Member 10 -->
-        <div class="team-member">
-            <img src="{% static 'images/team10.jpg' %}" alt="Lisa Black - Event Coordinator" class="team-photo">
-            <h3>who asked</h3>
-            <p>Williams Team Principal</p>
-        </div>
+        <!-- Team Members here -->
     </div>
 </div>
 
+<!-- Link to External JS File -->
 <script src="{% static 'js/reaction-game.js' %}"></script>
 {% endblock %}
