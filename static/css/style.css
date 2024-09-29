@@ -422,15 +422,30 @@ footer i {
 }
 
 .about-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #fff; /* White text for contrast */
-    margin-bottom: 15px;
+    font-size: 1.2rem;         /* Maintain good readability */
+    line-height: 1.8;          /* Optimal line spacing for readability */
+    color: #f0f0f0;            /* Softer white for better contrast on darker backgrounds */
+    margin-bottom: 20px;       /* Increase margin for better spacing between paragraphs */
+    font-weight: 300;          /* Lighter weight for elegance */
+    letter-spacing: 0.5px;     /* Slight letter spacing for modern typography */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow to enhance text legibility */
+    transition: transform 0.3s ease-in-out; /* Add smooth transition */
+}
+
+.about-text:hover {
+    transform: scale(1.02);   /* Slight scaling effect on hover to enhance interactivity */
 }
 
 .highlight {
-    color: #f0c808; /* A bright color like yellow for highlight */
-    font-weight: bold;
+    color: #f0c808;            /* Bright yellow for emphasis */
+    font-weight: 600;          /* Bolder weight for better emphasis */
+    font-style: italic;        /* Italicized for distinction */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Make highlighted text more prominent */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.highlight:hover {
+    color: #ffcc00;            /* Slightly brighter yellow on hover */
 }
 
 /* Meet The Grid Section */
