@@ -9,7 +9,7 @@ html, body {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif, Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #121212;
@@ -136,20 +136,16 @@ button {
     background-color: #ff0000;
     border: none;
     color: white;
-    padding: 12px 30px; /* Adjusted padding for a sleeker look */
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    padding: 12px 30px;
     font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
     background-color: #f0c808;
-    transform: scale(1.05);
+    transform: translateY(-3px); /* Elevates the button slightly on hover */
 }
 
 /* Form Container */
@@ -362,9 +358,11 @@ footer i {
     width: 100%;
     max-height: 500px;
     display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    background-attachment: fixed; /* Parallax effect */
+    background-size: cover;
 }
 
 .hero img {
@@ -374,7 +372,7 @@ footer i {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1; /* Ensures the image is behind the text */
+    z-index: -1;
 }
 
 .hero-text {
@@ -398,7 +396,7 @@ footer i {
 .about-section {
     position: relative; /* Allow overlaying content */
     padding: 50px;
-    background: url("% static 'assets/about.webp' %") no-repeat center center;
+    background: url('/static/assets/about.webp') no-repeat center center;
     background-size: cover;
     text-align: center; /* Center-align the text */
     max-width: 800px;
@@ -424,15 +422,30 @@ footer i {
 }
 
 .about-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #fff; /* White text for contrast */
-    margin-bottom: 15px;
+    font-size: 1.2rem;         /* Maintain good readability */
+    line-height: 1.8;          /* Optimal line spacing for readability */
+    color: #f0f0f0;            /* Softer white for better contrast on darker backgrounds */
+    margin-bottom: 20px;       /* Increase margin for better spacing between paragraphs */
+    font-weight: 300;          /* Lighter weight for elegance */
+    letter-spacing: 0.5px;     /* Slight letter spacing for modern typography */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow to enhance text legibility */
+    transition: transform 0.3s ease-in-out; /* Add smooth transition */
+}
+
+.about-text:hover {
+    transform: scale(1.02);   /* Slight scaling effect on hover to enhance interactivity */
 }
 
 .highlight {
-    color: #f0c808; /* A bright color like yellow for highlight */
-    font-weight: bold;
+    color: #f0c808;            /* Bright yellow for emphasis */
+    font-weight: 600;          /* Bolder weight for better emphasis */
+    font-style: italic;        /* Italicized for distinction */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Make highlighted text more prominent */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.highlight:hover {
+    color: #ffcc00;            /* Slightly brighter yellow on hover */
 }
 
 /* Meet The Grid Section */
@@ -447,13 +460,14 @@ footer i {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; /* Space between the team members */
+    gap: 30px;
     margin-bottom: 50px;
 }
 
 .team-member {
     text-align: center;
-    max-width: 150px;
+    flex: 1 1 200px; /* Allow flex items to grow and shrink */
+    max-width: 250px; /* Maximum width to prevent too-large elements */
 }
 
 .team-photo {
@@ -510,3 +524,51 @@ h1 {
     padding-bottom: 10px;
 }
 
+/* Reaction Game Styles */
+.reaction-game {
+    text-align: center;
+    padding: 30px;
+    margin: 50px auto;
+    max-width: 600px;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    background-color: #121212;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.reaction-game h2 {
+    font-size: 2rem;
+    color: #f0c808;
+}
+
+.light {
+    font-size: 2rem;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+button {
+    background-color: #ff0000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f0c808;
+}
+
+#reaction-time {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
