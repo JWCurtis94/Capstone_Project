@@ -9,7 +9,7 @@ html, body {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif, Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #121212;
@@ -136,20 +136,16 @@ button {
     background-color: #ff0000;
     border: none;
     color: white;
-    padding: 12px 30px; /* Adjusted padding for a sleeker look */
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    padding: 12px 30px;
     font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
     border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
     background-color: #f0c808;
-    transform: scale(1.05);
+    transform: translateY(-3px); /* Elevates the button slightly on hover */
 }
 
 /* Form Container */
@@ -362,9 +358,11 @@ footer i {
     width: 100%;
     max-height: 500px;
     display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    background-attachment: fixed; /* Parallax effect */
+    background-size: cover;
 }
 
 .hero img {
@@ -374,7 +372,7 @@ footer i {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1; /* Ensures the image is behind the text */
+    z-index: -1;
 }
 
 .hero-text {
@@ -398,7 +396,7 @@ footer i {
 .about-section {
     position: relative; /* Allow overlaying content */
     padding: 50px;
-    background: url("% static '/static/assets/About-Background.webp' %") no-repeat center center;
+    background: url('/static/assets/about.webp') no-repeat center center;
     background-size: cover;
     text-align: center; /* Center-align the text */
     max-width: 800px;
@@ -447,13 +445,14 @@ footer i {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; /* Space between the team members */
+    gap: 30px;
     margin-bottom: 50px;
 }
 
 .team-member {
     text-align: center;
-    max-width: 150px;
+    flex: 1 1 200px; /* Allow flex items to grow and shrink */
+    max-width: 250px; /* Maximum width to prevent too-large elements */
 }
 
 .team-photo {
