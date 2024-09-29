@@ -21,6 +21,8 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from core import views as core_views  # Using core_views to reference core views
 from accounts import views as accounts_views
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib import messages
 
 urlpatterns = [
     path('admin/', admin.site.urls),
