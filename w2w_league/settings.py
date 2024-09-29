@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-jwcurtis94-capstoneproj-mlmxty6d3wx.ws.codeinstitute-ide.net',
+    '8000-jwcurtis94-capstoneproj-dnyi14c7ix0.ws.codeinstitute-ide.net',
     '8000-jwcurtis94-capstoneproj-szixg7vt8q9.ws.codeinstitute-ide.net',
     'w2w-791ab20c5eb9.herokuapp.com',
     '8000-jwcurtis94-capstoneproj-din15cczels.ws.codeinstitute-ide.net',
@@ -49,7 +49,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8000-jwcurtis94-capstoneproj-g6q9pdembn0.ws.codeinstitute-ide.net',
     'https://8000-jwcurtis94-capstoneproj-fj4am88dcuv.ws.codeinstitute-ide.net',
     'https://w2w-791ab20c5eb9.herokuapp.com',
-    'https://8000-jwcurtis94-capstoneproj-jsds73qvvjy.ws.codeinstitute-ide.net',
+    'https://8000-jwcurtis94-capstoneproj-dnyi14c7ix0.ws.codeinstitute-ide.net',
 ]
 
 

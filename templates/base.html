@@ -25,7 +25,16 @@
                     <img src="{% static 'assets/W2W.png' %}" alt="W2W logo">
                 </a>
             </div>
-            <ul>
+
+            <!-- Burger Icon for Mobile Navigation -->
+            <div class="burger-icon" id="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="nav-links">
                 <li><a href="{% url 'home' %}">Home</a></li>
 
                 <!-- Show "Standings" and "FIA" links only if the user is authenticated -->
@@ -66,5 +75,15 @@
 
     <!-- Block for custom JavaScript in specific pages -->
     {% block extra_js %}{% endblock %}
+
+    <!-- JavaScript to handle burger menu toggle -->
+    <script>
+        const burgerIcon = document.getElementById('burger-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        burgerIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
