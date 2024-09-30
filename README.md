@@ -1,84 +1,113 @@
-# F1 Sim Racing Website
+# 🏎️ W2W F1 Sim Racing League
 
-## 🏎️ About
+## 🚦 About
 
-W2W (Wheel-to-Wheel) F1 Sim Racing League is a web application built with Django to manage and organize Formula 1 simulation racing events. This platform provides a comprehensive solution for racing enthusiasts to participate in virtual F1 races, track their performance, and engage with the community. The website is designed to enhance the racing experience through features such as registration, standings, and user profiles.
+**W2W (Wheel-to-Wheel) F1 Sim Racing League** is a comprehensive web application developed using Django, designed to manage and organize virtual Formula 1 simulation racing events. The platform caters to F1 sim racing enthusiasts, offering features like registration, live standings, race results, and user profiles. Through dynamic features and an intuitive user experience, the website aims to provide a fully immersive and engaging space for racers to track performance, join races, and engage with the W2W community.
 
-## 🔎 UX Design
+---
 
-The design of the website is focused on simplicity and accessibility, ensuring users can easily navigate through the various sections. The color scheme, inspired by the high-energy world of racing, includes bold tones of red, yellow, white, and black. Key design features include a hero video on the homepage to capture attention, smooth scrolling, and intuitive navigation with links to essential pages such as standings, FIA information, and user registration.
+## 🎨 UX Design
+
+The design focuses on a **minimalist** and **dark-themed** aesthetic, emphasizing simplicity and ease of navigation. Inspired by the energy and colors of F1 racing, the color scheme is a bold combination of **red**, **yellow**, **white**, and **black**. Key features include:
+
+- **Hero video** on the homepage to engage users immediately.
+- **Smooth scrolling** for seamless transitions between sections.
+- **Elegant typography** for clarity and aesthetics.
+- **Consistent navigation bar** and **footer** with Discord and YouTube icons for social engagement.
+
+---
 
 ## 🚀 Features
-- ** User Authentication: Users can register, log in, and manage their profiles.
 
-- ** Standings Page: Displays race results and league standings.
+- **User Authentication**: Secure registration, login, and email confirmation using Django-Allauth.
+- **Profile Management**: Users can update personal information, including email and username.
+- **Race Standings**: Dynamic standings page that reflects real-time race results and rankings.
+- **Incident Reporting**: Allows users to submit tickets for race incidents, handled through custom models like `IncidentTicket`.
+- **FIA Information Page**: Displays the official W2W racing rules and regulations.
+- **Responsive Design**: Optimized for various devices, including mobile and desktop.
+- **Media Uploads**: Integrated media upload system for race screenshots and content sharing.
+- **Smooth Animations**: Subtle animations and transitions improve interactivity and the user experience.
 
-- ** FIA Information Page: Provides official rules and regulations for the racing league.
-
-- ** Responsive Design: The site is fully responsive and optimized for both desktop and mobile devices.
-
-- ** Dynamic Content: Uses Django's templating system to dynamically serve content based on user activity.
-
+---
 
 ## 🛠️ Technologies Used
-- #### Backend: Django (Python)
-- #### Database: PostgreSQL
-- #### Frontend: HTML, CSS, JavaScript
-- #### Task Queue: Celery with Redis (for notifications and scheduled tasks)
-- #### File Storage: Django's FileField (for managing media uploads; cloud storage may be considered in production)
+
+- **Backend**: Django (Python)
+- **Database**: PostgreSQL
+- **Frontend**: HTML, CSS, JavaScript (with modern CSS features for animations)
+- **Task Queue**: Celery with Redis (for managing notifications and background tasks)
+- **File Storage**: Django FileField for handling media uploads
+- **Frontend Libraries**: Bootstrap for responsiveness, Font Awesome for icons
+
+---
+
+## 🐛 Bug Fixes and Issues Solved
+
+- **Registration Bugs**: Fixed issues with form validation and email confirmation not triggering on specific devices.
+- **CSS Responsiveness**: Corrected display issues on smaller screens where elements overlapped.
+- **Race Standings Calculation**: Addressed a bug in race standings where ties were not handled correctly.
+- **Dynamic URLs**: Mapped URLs for the 'About' page and corrected it to link to the correct view.
+- **Incident Ticket Submission**: Solved a problem where users were unable to submit incident reports due to model field errors.
+- **Smooth Animations**: Improved the performance of scroll-based animations, especially on mobile browsers.
+- **Database Migrations**: Fixed inconsistencies with PostgreSQL migrations related to the `RaceResult` and `IncidentTicket` models.
+
+---
 
 ## 🔧 Testing
 
-The website has been thoroughly tested for responsiveness, cross-browser compatibility, and performance. As demonstrated by validation tools and Google Lighthouse, the site achieves high performance scores, with all key functionality working across different devices and screen sizes.
+The project has undergone extensive testing for:
+
+- **Responsiveness**: Verified across multiple devices (desktop, tablet, mobile).
+- **Browser Compatibility**: Tested on Chrome, Firefox, and Safari.
+- **Form Validation**: Ensured proper validation for registration and login forms.
+- **Unit Testing**: Performed unit tests for critical functionalities (race result calculations, user authentication, etc.).
+- **Performance**: Improved load times with image optimization and lazy loading for media-heavy sections (tested with Google Lighthouse).
+
+---
 
 ## 📚 User Stories
 
-The development process was managed using GitHub Project Boards to keep track of tasks, bugs, and feature requests. Below are screenshots of the project's progress
+The project development followed an agile approach, with the GitHub Project Board tracking tasks and milestones. User stories were focused on creating an immersive and easy-to-use platform for sim racing enthusiasts, prioritizing the following features:
+
+- Users should be able to **register and verify accounts** easily.
+- Standings should reflect **real-time race results** with minimal delay.
+- The website must be **easy to navigate** on mobile devices.
+- A robust incident reporting system should be in place to ensure fairness.
+
+Below are some screenshots showing the project's progress:
 ![Screenshot 2024-09-16 133041](https://github.com/user-attachments/assets/9c40bf9b-6e04-4efa-8d1c-d735fa1c5bdb)
 ![Screenshot 2024-09-16 133820](https://github.com/user-attachments/assets/c4f7b45d-d369-4c4b-b8f4-f1d017a13795)
-![Screenshot 2024-09-16 135937](https://github.com/user-attachments/assets/c1378cf6-a361-463c-afd5-890a73dce73d)
-![Screenshot 2024-09-16 145008](https://github.com/user-attachments/assets/79fe005d-94a6-4408-b619-099c5f6bc0bd)
+
+---
 
 ## ✈️ Usage
-- Homepage: Displays an introduction to the W2W F1 Sim Racing League, including a hero video and key information.
-- Registration: Users can register to participate in the league, providing details such as username, email, and date of birth.
-- Standings: Displays up-to-date race standings and driver performance.
-- Login/Profile: Users can log in to access their profile and track their personal statistics.
 
-## Future Features
-- Live Race Tracking: A feature to show live race progress.
-- Customizable User Profiles: Allowing users to update avatars and personal bios.
-- Race Scheduling: Integrating a race calendar with notifications.
-- Advanced Analytics: Providing detailed statistics and race insights for drivers.
+- **Homepage**: Provides an introduction to the W2W league, featuring a hero video and quick links to key sections.
+- **User Registration**: New users can sign up with fields like username, email, date of birth, and password confirmation, with email verification.
+- **Standings**: Displays real-time race results and driver standings.
+- **Login/Profile**: Users can log in to view and manage their profiles, update information, and track personal stats.
+- **FIA Page**: Contains league rules and FIA regulatory information for participants.
+
+---
+
+## 🔮 Future Features
+
+- **Live Race Tracking**: Integrating a live tracking feature to display ongoing race progress.
+- **Enhanced User Profiles**: Allow users to upload avatars and customize personal bios.
+- **Race Calendar**: A comprehensive race scheduling feature, complete with notifications for upcoming events.
+- **Advanced Analytics**: Detailed performance breakdowns, race-by-race analytics, and data visualization for drivers.
+
+---
 
 ## 💻 Resources
-- ### Balsamiq
-Balsamiq was used to produce the wireframes in the design phase.
-- ### Git  
-Git was used for version control
-- ### Github  
-GitHub was used to store the code and allow collaboration on the project.
-- ### Google Fonts  
-Google Fonts was used for the custom fonts
-- ### Google Chrome Dev Tools  
-Used to troubleshoot and test design ideas and styling.
-- ### Google Lighthouse  
-Used to test performance of the website
-- ### Favicon  
-Used to generate the favicon
-- ### W3 Schools  
-Used to look up syntax for HTML and CSS
-- ### Stack Overflow  
-Used for queries around coding
-- ### Perplexity  
-Used to provide sources to generate text for the website
-- ### Chat GPT  
-Used for syntax errors and help with spelling
-- ### Pexels  
-Used for copyright free images
-- ### W3C HTML validator  
-Used to validate the HTML
-- ### W3 Jigsaw  
-Used to validate the CSS
-- ### jshint   
-Used for javascript validation
+
+- **Balsamiq**: Used for wireframing during the initial design phase.
+- **Git & GitHub**: Git for version control and GitHub for repository hosting and collaboration.
+- **Google Fonts**: Customized fonts for a professional look.
+- **Google Chrome Dev Tools**: For inspecting and troubleshooting design and layout issues.
+- **Google Lighthouse**: Ensured high performance, accessibility, and best practices.
+- **Favicon Generator**: For website branding.
+- **W3C Validators**: Ensured valid HTML and CSS across the project.
+- **Stack Overflow**: For resolving various technical queries.
+- **Pexels**: Sourced royalty-free images.
+- **ChatGPT**: Assisted in troubleshooting bugs, providing guidance on complex functionality and spelling.
