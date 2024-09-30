@@ -13,7 +13,7 @@ class RegistrationForm(UserCreationForm):
 class ProfileUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['image', 'bio']  # Adjust fields according to your model
+        fields = ['image', 'bio']
 
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()

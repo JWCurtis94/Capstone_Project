@@ -27,14 +27,14 @@ from core import views
 
 # Custom login and logout views to include messages
 class CustomLoginView(LoginView):
-    template_name = 'accounts/login.html'  # Ensure this points to the correct template
+    template_name = 'accounts/login.html'
 
     def form_valid(self, form):
         messages.success(self.request, "You have successfully logged in!")
         return super().form_valid(form)
 
 class CustomLogoutView(LogoutView):
-    template_name = 'accounts/logout.html'  # Ensure this points to the correct template
+    template_name = 'accounts/logout.html'
 
     def dispatch(self, request, *args, **kwargs):
         messages.success(self.request, "You have successfully logged out!")

@@ -21,7 +21,7 @@ def submit_result(request):
             result.save()
             return redirect('standings')
         else:
-            return render(request, 'core/submit_result.html', {'form': form, 'error': 'Invalid data'})  # Added error handling
+            return render(request, 'core/submit_result.html', {'form': form, 'error': 'Invalid data'})
     else:
         form = RaceResultForm()
     return render(request, 'core/submit_result.html', {'form': form})
