@@ -12,7 +12,7 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)  # Log the user in after registration
+            login(request, user)
             return redirect('home')
     else:
         form = RegistrationForm()
@@ -22,9 +22,9 @@ def register(request):
 @login_required
 def profile(request):
     try:
-        profile = request.user.profile  # Try accessing the profile
+        profile = request.user.profile
     except Profile.DoesNotExist:
-        profile = Profile.objects.create(user=request.user)  # Create a profile if it doesn't exist
+        profile = Profile.objects.create(user=request.user)
 
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
@@ -49,15 +49,14 @@ def about(request):
     return render(request, 'about.html')
 
 def fia_page(request):
-    # Fetch FIA verdicts from the database
+
     verdicts = Verdict.objects.all()
 
-    # Handle form submission
+
     if request.method == 'POST':
         form = IncidentForm(request.POST)
         if form.is_valid():
             form.save()
-            # Redirect or give feedback upon success
     else:
         form = IncidentForm()
 

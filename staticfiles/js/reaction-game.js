@@ -27,13 +27,13 @@ function startGame() {
         }, delay);
 
     } else if (gameStarted && lightGreen) {
-        // Calculate reaction time if button is pressed when light is green
+        // User clicked when the light is green, calculate reaction time
         const reactionTime = Date.now() - startTime;
         reactionTimeDisplay.textContent = `Your reaction time: ${reactionTime} ms`;
         resetGame();
-    } else {
-        // User pressed too early
-        reactionTimeDisplay.textContent = "Too early!";
+    } else if (gameStarted && !lightGreen) {
+        // User clicked too early
+        reactionTimeDisplay.textContent = "Too early! Wait for the green light!";
         resetGame();
     }
 }
@@ -42,6 +42,11 @@ function resetGame() {
     clearTimeout(reactionTimeout);
     gameStarted = false;
     lightGreen = false;
+
     const startButton = document.getElementById("start-btn");
+    const light = document.getElementById("light");
+
     startButton.textContent = "Start Game";
+    light.style.backgroundColor = "red";
+    light.textContent = "Red";
 }

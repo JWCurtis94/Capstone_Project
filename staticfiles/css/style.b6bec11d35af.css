@@ -348,7 +348,7 @@ footer a:hover {
 /* About Section */
 .about-section {
     padding: 50px;
-    background: url('/static/assets/about.webp') no-repeat center center;
+    background: url("/static/assets/about.ba967e782bd1.webp") no-repeat center center;
     background-size: cover;
     text-align: center;
     max-width: 800px;
