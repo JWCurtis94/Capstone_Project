@@ -79,3 +79,6 @@ def calendar(request):
 @login_required
 def reaction_game(request):
     return render(request, 'reaction_game.html')
+
+def live_stream(request):
+    return render(request, 'core/live_stream.html')

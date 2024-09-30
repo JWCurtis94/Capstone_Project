@@ -23,6 +23,7 @@ from core import views as core_views  # Using core_views to reference core views
 from accounts import views as accounts_views
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import messages
+from core import views
 
 # Custom login and logout views to include messages
 class CustomLoginView(LoginView):
@@ -56,6 +57,7 @@ urlpatterns = [
     path('calendar/', core_views.calendar, name='calendar'),
     path('about/', core_views.about, name='about'),
     path('reaction-game/', core_views.reaction_game, name='reaction_game'),
+    path('live-stream/', views.live_stream, name='race_live_stream'),
 ]
 
 # Serve media files during development

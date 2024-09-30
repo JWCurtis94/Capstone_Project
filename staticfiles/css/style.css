@@ -319,6 +319,7 @@ tr:nth-child(even) {
     .about-text {
         font-size: 1rem;
         line-height: 1.6;
+        
     }
 }
 
@@ -367,7 +368,7 @@ footer a:hover {
 .about-text {
     font-size: 1.2rem;
     line-height: 1.8;
-    color: #f0f0f0;
+    color: #e6db0f;
     margin-bottom: 20px;
     font-weight: 300;
     letter-spacing: 0.5px;
@@ -530,4 +531,93 @@ button:hover {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* FIA Penalty Table */
+.fia-penalty-table {
+    background-color: #1c1c1c;
+    color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    max-width: 1000px;
+    margin: 40px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.fia-penalty-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.fia-penalty-table table th,
+.fia-penalty-table table td {
+    padding: 12px 15px;
+    border: 1px solid #666;
+    text-align: left;
+}
+
+.fia-penalty-table table th {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.fia-penalty-table table td {
+    background-color: #2a2a2a;
+}
+
+.fia-penalty-table h3 {
+    margin-top: 20px;
+    color: #ffcc00;
+    text-align: center;
+    font-weight: bold;
+}
+
+.fia-penalty-table ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.fia-penalty-table ul li {
+    margin-bottom: 10px;
+    color: #f0f0f0;
+}
+
+.fia-penalty-table strong {
+    color: #ffcc00;
+}
+
+/* Responsive FIA Table */
+@media (max-width: 768px) {
+    .fia-penalty-table table th,
+    .fia-penalty-table table td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .fia-penalty-table h3 {
+        font-size: 1.5rem;
+    }
+}
+
+.live-stream-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.live-stream-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.live-stream-container iframe {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

@@ -46,6 +46,7 @@
 
                 <!-- Show "Register" and "Login" links only if the user is not authenticated -->
                 {% if not user.is_authenticated %}
+                    <li><a href="{% url 'race_live_stream' %}">Race Live Stream</a></li>
                     <li><a href="{% url 'register' %}">Register</a></li>
                     <li><a href="{% url 'login' %}">Login</a></li>
                 {% else %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="live-stream-container">
+    <h1>Race Live Stream</h1>
+    <p>Watch the current race live below:</p>
+
+    <!-- Embed YouTube or Twitch live stream iframe -->
+    <iframe width="100%" height="600" 
+            src="https://www.youtube.com/embed/YOUR_LIVE_STREAM_ID" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+</div>
+{% endblock %}
