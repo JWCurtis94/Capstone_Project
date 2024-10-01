@@ -77,6 +77,7 @@ The project development followed an agile approach, with the GitHub Project Boar
 Below are some screenshots showing the project's progress:
 ![Screenshot 2024-09-16 133041](https://github.com/user-attachments/assets/9c40bf9b-6e04-4efa-8d1c-d735fa1c5bdb)
 ![Screenshot 2024-09-16 133820](https://github.com/user-attachments/assets/c4f7b45d-d369-4c4b-b8f4-f1d017a13795)
+![er_diagram](https://github.com/user-attachments/assets/e6336574-c682-48b3-b37d-1f9f0585883e)
 
 ---
 
