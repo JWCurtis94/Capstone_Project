@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     'accounts',
     'core',
     'w2w_league',
+    'django_extensions',
     
 ]
 
@@ -190,4 +191,9 @@ SOCIALACCOUNT_PROVIDERS = {
         'FIELDS': ['id', 'email', 'name'],
         'VERIFIED_EMAIL': False,
     },
+}
+
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
 }
