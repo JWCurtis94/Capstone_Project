@@ -7,7 +7,6 @@
 
     {% load static %}
 
-
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" sizes="16x16" href="{% static 'assets/favicon-16x16.png' %}">
@@ -15,8 +14,52 @@
 
     <!-- Block for custom CSS in specific pages -->
     {% block extra_css %}{% endblock %}
+    
+    <style>
+        /* Custom Toast Style */
+        .custom-toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: yellow;
+            color: black;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        .custom-toast.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
 </head>
 <body>
+    <!-- Custom Toast Container -->
+    <div id="custom-toast" class="custom-toast"></div>
+
+    <!-- Messages from Django -->
+    {% if messages %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toastElement = document.getElementById('custom-toast');
+            
+            {% for message in messages %}
+            toastElement.innerText = "{{ message }}";
+            toastElement.classList.add('show');
+            
+            // Hide after 3 seconds
+            setTimeout(function () {
+                toastElement.classList.remove('show');
+            }, 3000);
+            {% endfor %}
+        });
+    </script>
+    {% endif %}
+
     <!-- Header with Navigation -->
     <header>
         <nav aria-label="Main Navigation">

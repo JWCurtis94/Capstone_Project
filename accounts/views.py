@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
@@ -66,3 +67,13 @@ def fia_page(request):
     }
 
     return render(request, 'fia_page.html', context)
+
+def login_view(request):
+    # After successful login
+    messages.success(request, 'You have successfully logged in.')
+    return redirect('home')
+
+def logout_view(request):
+    # After successful logout
+    messages.success(request, 'You have successfully logged out.')
+    return redirect('home')
