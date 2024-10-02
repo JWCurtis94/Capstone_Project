@@ -2,18 +2,24 @@
 {% load static %}
 
 {% block extra_css %}
+    <!-- Link to the custom CSS for the register page -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
 {% endblock %}
 
 {% block content %}
 <main>
+    <!-- Form container for the registration form -->
     <div class="form-container">
         <h2>Register</h2>
+
+        <!-- Django form for registration -->
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Register</button>
         </form>
+
+        <!-- Link to login page for users who already have an account -->
         <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
     </div>
 </main>
