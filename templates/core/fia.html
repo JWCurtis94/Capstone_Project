@@ -4,8 +4,9 @@
     <section class="fia-page">
         <div class="container">
 
-            <!-- Rules Section -->
+            <!-- FIA Penalty Table Section -->
             <div class="fia-penalty-table">
+                <!-- Penalty Table for Different Collision Levels -->
                 <table>
                     <thead>
                         <tr>
@@ -43,26 +44,29 @@
                     </tbody>
                 </table>
 
+                <!-- Explanation of Collision Levels -->
                 <p><strong>Minor</strong>: Very slight contact, taps, pushed off track. No damage involved</p>
                 <p><strong>Moderate</strong>: Spins, hit from behind. Incidents with damage involved</p>
                 <p><strong>Major</strong>: Incidents resulting in multiple collisions</p>
                 <p><strong>Critical</strong>: Crash resulting in a DNF</p>
-                <p><strong>(3 Warnings will result in a 10 Second time penalty and 2pp applied in the following race)</strong></p>
+                <p><strong>(3 Warnings will result in a 10-second time penalty and 2pp applied in the following race)</strong></p>
 
+                <!-- Additional Penalties Section -->
                 <h3>Additional Penalties:</h3>
                 <ul>
                     <li>Readying up early on the grid: 2pp</li>
                     <li>Quitting on track: 2pp</li>
-                    <li>Crossing pit lane entry/exit: 5 Seconds 1pp</li>
-                    <li>Ignoring blue flags: 5 Seconds 1pp</li>
-                    <li>Deliberate corner cutting (Quali): 5 Seconds 1pp</li>
-                    <li>Resetting to track: 10 Seconds 2pp</li>
-                    <li>Overtaking under SC: 10 Seconds 2pp</li>
+                    <li>Crossing pit lane entry/exit: 5 Seconds + 1pp</li>
+                    <li>Ignoring blue flags: 5 Seconds + 1pp</li>
+                    <li>Deliberate corner cutting (Quali): 5 Seconds + 1pp</li>
+                    <li>Resetting to track: 10 Seconds + 2pp</li>
+                    <li>Overtaking under SC: 10 Seconds + 2pp</li>
                     <li>Causing a driver to lift during Quali: Q3 Ban</li>
                     <li>Causing a driver to take avoiding action during Quali: Q2 Ban</li>
                     <li>Causing contact with another driver during Quali: Quali Ban</li>
                 </ul>
 
+                <!-- Penalty Points Thresholds Section -->
                 <h3>Penalty Points Thresholds:</h3>
                 <ul>
                     <li><strong>Penalty Points Received 8</strong>: Quali Ban</li>
@@ -71,18 +75,19 @@
                 </ul>
             </div>
 
-            <!-- Incident Ticket Submission -->
+            <!-- Incident Ticket Submission Section -->
             <section id="submit-ticket" class="ticket-section">
                 <h2>Submit a Race Incident Ticket</h2>
                 <p>If you were involved in or witnessed an incident during a race, please submit a ticket for FIA review:</p>
 
+                <!-- Form to Submit a Race Incident Ticket -->
                 <form method="POST" action="">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button type="submit">Submit Ticket</button>
                 </form>
             </section>
+
         </div>
     </section>
-
 {% endblock %}
