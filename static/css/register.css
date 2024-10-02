@@ -7,34 +7,36 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-  }
-  
-  /* Container to hold the content in the center */
-  main {
+}
+
+/* Main container holding the content in the center */
+main {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem;
-  }
-  
-  /* Form Container */
-  .form-container {
+}
+
+/* Form Container Styling */
+.form-container {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     padding: 2.5rem;
     width: 100%;
-    max-width: 400px;
+    max-width: 400px; /* Max width for responsiveness */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .form-container:hover {
+}
+
+/* Hover effect for form container */
+.form-container:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-  }
-  
-  h2 {
+}
+
+/* Form Header Styling */
+h2 {
     color: #333;
     font-size: 2rem;
     margin-bottom: 1.5rem;
@@ -44,30 +46,32 @@ body {
     font-weight: 600;
     border-bottom: 2px solid #4a90e2;
     padding-bottom: 10px;
-  }
-  
-  /* Form Styles */
-  form {
+}
+
+/* Form Layout */
+form {
     display: flex;
     flex-direction: column;
-  }
-  
-  form p {
+}
+
+/* Paragraphs inside form (like error messages or labels) */
+form p {
     margin-bottom: 1rem;
-  }
-  
-  label {
+}
+
+/* Labels for form fields */
+label {
     font-weight: 600;
     margin-bottom: 0.75rem;
     color: #555;
     font-size: 1rem;
     letter-spacing: 0.5px;
-  }
-  
-  /* Input Fields Styling */
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
+}
+
+/* Input Field Styling */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
     width: 100%;
     padding: 0.85rem;
     border: 2px solid #ccc;
@@ -78,42 +82,39 @@ body {
     background-color: #f9f9f9;
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
     color: #333;
-  }
-  
-  /* Add a background color and border on focus */
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  input[type="password"]:focus {
+}
+
+/* Focus state for input fields */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
     border-color: #4a90e2;
     background-color: #fff;
     outline: none;
     box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
-  }
-  
-  /* Change background and border color when hovering */
-  input[type="text"]:hover,
-  input[type="email"]:hover,
-  input[type="password"]:hover {
+}
+
+/* Hover state for input fields */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover {
     border-color: #4a90e2;
     background-color: #f0f0f0;
-    border-color: #bbb;
-  }
-  
-  /* Style the placeholder text to be more visible */
-  input::placeholder {
-    border-color: #4a90e2;
+}
+
+/* Placeholder text styling */
+input::placeholder {
     color: #999;
-    opacity: 1;
     font-size: 0.9rem;
-  }
-  
-  /* Add focus state for accessibility */
-  input:focus::placeholder {
+}
+
+/* Placeholder disappears on focus for a clean look */
+input:focus::placeholder {
     color: transparent;
-  }
-  
-  /* Submit Button Styling */
-  button[type="submit"] {
+}
+
+/* Submit Button Styling */
+button[type="submit"] {
     background-color: #4a90e2;
     color: white;
     border: none;
@@ -125,121 +126,111 @@ body {
     font-weight: 600;
     letter-spacing: 0.5px;
     transition: all 0.3s ease;
-  }
-  
-  button[type="submit"]:hover {
+}
+
+/* Hover effect for submit button */
+button[type="submit"]:hover {
     background-color: #4a90e2;
     transform: translateY(-2px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  button[type="submit"]:active {
+}
+
+/* Active state for submit button */
+button[type="submit"]:active {
     transform: translateY(1px);
     box-shadow: none;
-  }
-  
-  /* Link Styles */
-  a {
+}
+
+/* Link Styling */
+a {
     color: #4a90e2;
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: 500;
-  }
-  
-  a:hover {
+}
+
+/* Hover state for links */
+a:hover {
     color: #3a7bc8;
     text-decoration: underline;
-  }
-  
-  /* Paragraph Styles */
-  p {
+}
+
+/* General paragraph styling */
+p {
     text-align: center;
     font-size: 0.9rem;
     color: #555;
-  }
-  
-  p:last-child {
+}
+
+/* Margin adjustment for last paragraph */
+p:last-child {
     margin-top: 1.5rem;
-  }
-  
-  /* Error Messages */
-  .errorlist {
+}
+
+/* Error Message Styling */
+.errorlist {
     color: #e74c3c;
     list-style-type: none;
     padding: 0;
     margin: 0 0 1rem;
     font-weight: 600;
-  }
-  
-  .errorlist li {
+}
+
+.errorlist li {
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
-  }
-  
-  /* Footer Styling */
-  footer {
+}
+
+/* Footer Styling */
+footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px;
     margin-top: auto;
-  }
-  
-  footer a {
+}
+
+/* Footer link styling */
+footer a {
     color: #f0c808;
     margin: 0 10px;
     transition: color 0.3s ease;
-  }
-  
-  footer a:hover {
+}
+
+/* Hover state for footer links */
+footer a:hover {
     color: #ff0000;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
+}
+
+/* Responsive Styling for smaller screens */
+@media (max-width: 768px) {
     .form-container {
-      padding: 2rem;
+        padding: 2rem;
     }
-  
+
     h2 {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
-  
+
     input[type="text"],
     input[type="email"],
     input[type="password"] {
-      padding: 0.75rem;
+        padding: 0.75rem;
     }
-  
+
     button[type="submit"] {
-      padding: 0.75rem;
+        padding: 0.75rem;
     }
-  
+
     p {
-      font-size: 0.85rem;
+        font-size: 0.85rem;
     }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .form-container {
-      padding: 1.5rem;
+        padding: 1.5rem;
     }
-  
+
     h2 {
-      font-size: 1.2rem;
-    }
-  
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-      padding: 0.65rem;
-    }
-  
-    button[type="submit"] {
-      padding: 0.65rem;
-    }
-  
-    p {
-      font-size: 0.8rem;
-    }
-  }  
+        font-size: 1
