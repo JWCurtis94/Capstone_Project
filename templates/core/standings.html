@@ -1,21 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- League Standings Container -->
 <div class="standings-container">
+    <!-- Standings Header -->
     <h2>League Standings</h2>
+
+    <!-- Table to Display League Standings -->
     <table>
         <thead>
             <tr>
+                <!-- Table Headers for Position, Driver, and Points -->
                 <th>Position</th>
                 <th>Driver</th>
                 <th>Points</th>
             </tr>
         </thead>
         <tbody>
+            <!-- Loop through the standings and display each driver's position, username, and points -->
             {% for standing in standings %}
             <tr>
+                <!-- Display position using the loop counter -->
                 <td>{{ forloop.counter }}</td>
+                <!-- Display driver's username -->
                 <td>{{ standing.driver__username }}</td>
+                <!-- Display total points for the driver -->
                 <td>{{ standing.total_points }}</td>
             </tr>
             {% endfor %}
