@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
 class Race(models.Model):
     name = models.CharField(max_length=100)
@@ -9,6 +10,7 @@ class Race(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.date.strftime('%Y-%m-%d')}"
+
 
 class RaceResult(models.Model):
     race = models.ForeignKey(Race, on_delete=models.CASCADE)
@@ -22,6 +24,7 @@ class RaceResult(models.Model):
     def __str__(self):
         return f"{self.race.name} - {self.driver.username} - P{self.position}"
 
+
 class Verdict(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
@@ -29,6 +32,7 @@ class Verdict(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class IncidentTicket(models.Model):
     username = models.CharField(max_length=100)

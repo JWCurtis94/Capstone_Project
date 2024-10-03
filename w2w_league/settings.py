@@ -46,12 +46,14 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-jwcurtis94-capstoneproj-g64aklyigtr.ws.codeinstitute-ide.net',
-    'https://8000-jwcurtis94-capstoneproj-fj4am88dcuv.ws.codeinstitute-ide.net',
+    'https://8000-jwcurtis94-capstoneproj-g64aklyigtr.ws.codeinstitute'
+    '-ide.net',
+    'https://8000-jwcurtis94-capstoneproj-fj4am88dcuv.ws.codeinstitute'
+    '-ide.net',
     'https://w2w-791ab20c5eb9.herokuapp.com',
-    'https://8000-jwcurtis94-capstoneproj-oi6nickhqe0.ws.codeinstitute-ide.net',
+    'https://8000-jwcurtis94-capstoneproj-oi6nickhqe0.ws.codeinstitute'
+    '-ide.net',
 ]
-
 
 # Application definition
 
@@ -72,7 +74,6 @@ INSTALLED_APPS = [
     'core',
     'w2w_league',
     'django_extensions',
-    
 ]
 
 MIDDLEWARE = [
@@ -107,7 +108,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'w2w_league.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
@@ -123,19 +123,22 @@ if 'test' in sys.argv:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
@@ -147,7 +150,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
@@ -162,7 +164,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 # Allauth settings
 AUTHENTICATION_BACKENDS = (

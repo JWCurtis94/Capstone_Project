@@ -19,11 +19,12 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.auth import views as auth_views
-from core import views as core_views  # Using core_views to reference core views
+from core import views as core_views
 from accounts import views as accounts_views
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import messages
 from core import views
+
 
 # Custom login and logout views to include messages
 class CustomLoginView(LoginView):
@@ -33,12 +34,14 @@ class CustomLoginView(LoginView):
         messages.success(self.request, "You have successfully logged in!")
         return super().form_valid(form)
 
+
 class CustomLogoutView(LogoutView):
     template_name = 'accounts/logout.html'
 
     def dispatch(self, request, *args, **kwargs):
         messages.success(self.request, "You have successfully logged out!")
         return super().dispatch(request, *args, **kwargs)
+
 
 # URL Patterns
 urlpatterns = [
@@ -56,10 +59,16 @@ urlpatterns = [
     path('fia/', core_views.fia, name='fia'),
     path('calendar/', core_views.calendar, name='calendar'),
     path('about/', core_views.about, name='about'),
-    path('reaction-game/', core_views.reaction_game, name='reaction_game'),
-    path('live-stream/', views.live_stream, name='race_live_stream'),
+    path(
+        'reaction-game/', core_views.reaction_game, name='reaction_game'
+    ),
+    path(
+        'live-stream/', views.live_stream, name='race_live_stream'
+    ),
 ]
 
 # Serve media files during development
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(
+        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
+    )
