@@ -55,11 +55,11 @@
             </div>
 
             <!-- Burger Icon for Mobile Navigation (Hamburger Menu) -->
-            <div class="burger-icon" id="burger-icon">
+            <button class="burger-icon" id="burger-icon" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
 
             <!-- Navigation Links (Hidden by default on mobile) -->
             <ul class="nav-links" id="nav-links">
@@ -84,15 +84,17 @@
             </ul>
         </nav>
     </header>
-        {% block content %}
 
-        {% endblock %}
+    <!-- Main Content Block -->
+    {% block content %}
+    {% endblock %}
+
     <!-- Footer with links to Discord and YouTube using FontAwesome icons -->
     <footer>
-        <a href="https://discord.gg/H4u9wrQYU8" target="_blank">
+        <a href="https://discord.gg/H4u9wrQYU8" target="_blank" aria-label="Discord">
             <i class="fab fa-discord"></i>
         </a>
-        <a href="https://www.youtube.com/@W2WSimRacing" target="_blank">
+        <a href="https://www.youtube.com/@W2WSimRacing" target="_blank" aria-label="YouTube">
             <i class="fab fa-youtube"></i>
         </a>
     </footer>
@@ -102,12 +104,16 @@
 
     <!-- JavaScript to handle burger menu toggle for mobile view -->
     <script>
-        const burgerIcon = document.getElementById('burger-icon');
-        const navLinks = document.getElementById('nav-links');
+        document.addEventListener('DOMContentLoaded', function () {
+            const burgerIcon = document.getElementById('burger-icon');
+            const navLinks = document.getElementById('nav-links');
 
-        // Toggle the visibility of the navigation links when the burger icon is clicked
-        burgerIcon.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
+            // Toggle the visibility of the navigation links when the burger icon is clicked
+            burgerIcon.addEventListener('click', () => {
+                const expanded = burgerIcon.getAttribute('aria-expanded') === 'true' || false;
+                burgerIcon.setAttribute('aria-expanded', !expanded);
+                navLinks.classList.toggle('show');
+            });
         });
     </script>
 </body>

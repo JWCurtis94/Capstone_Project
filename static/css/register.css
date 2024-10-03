@@ -233,4 +233,20 @@ footer a:hover {
     }
 
     h2 {
-        font-size: 1
+        font-size: 1.5rem; /* Specify a unit like rem, px, or em */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 0.75rem;
+    }
+
+    button[type="submit"] {
+        padding: 0.75rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+    }
+}
