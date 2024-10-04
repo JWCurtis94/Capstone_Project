@@ -4,8 +4,8 @@
 ## Introduction
 **Wheel2Wheel** This website is designed for a Formula 1 sim racing league, where users can sign up to become drivers, check out race results and standings, and explore FIA regulations. Built using Django and Bootstrap, it focuses on managing data, engaging users, and making form submissions easy. It also embraces modern web design with a clean, minimalist look. This project was created as part of my capstone, where I focused on learning full-stack development, Python, and deployment, bringing everything together in a functional and visually appealing way.
 
-- **View live site here**: [Wheel2Wheel](https://yourlivewebsite.com)
-- **For Admin access**: [W2W Admin](https://youradminlink.com)
+- **View live site here**: [Wheel2Wheel](https://w2w-791ab20c5eb9.herokuapp.com/)
+- **For Admin access**: [W2W Admin](https://w2w-791ab20c5eb9.herokuapp.com/admin/)
   
 ---
 
