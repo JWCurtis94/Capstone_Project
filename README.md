@@ -65,18 +65,26 @@ The primary font for the website is **Poppins**, chosen for its modern, sleek st
 ## Technologies & Languages Used
 - **HTML5, CSS3, JavaScript**
 - **Python (Django Framework)**
-- **Bootstrap**
-- **Django-allauth**
+- **Bootstrap** Front-end framework used to enhance responsiveness and styling, making it easy to implement forms, buttons, and other components.
+- **Django-allauth** Enabled secure user authentication, registration, and email verification for a smooth login experience.
 - **PostgreSQL** for database management
 - **Heroku** for deployment
 
 ---
 
 ## Tools & Credits
-- **Git & GitHub**: Version control and repository hosting.
+- **Gitpod & GitHub**: Version control and repository hosting.
 - **Figma**: For wireframing and design mockups.
 - **Adobe Color**: For choosing and testing the website’s color palette.
-- **WAVE**:
+- **Youtube**: for guidence in video format
+- **FontAwesome**: Provided icons for visual elements, enhancing interactivity and design consistency.
+- **Google Fonts**: Integrated fonts like "Poppins" to provide a consistent and professional typography throughout the site.
+- **Lighthouse**: Used for performance, accessibility, and SEO testing, ensuring a fast and optimized user experience.
+- **JSHint & W3C Validators**: Validated JavaScript, HTML, and CSS to ensure best practices were followed and eliminate errors or warnings.
+- **Slack**: Used for team communication, allowing for quick discussions and collaboration.
+- **Pexels**: Provided high-quality images for backgrounds, headers, and illustrations to add visual appeal to the site.
+- **ChatGPT**: For providing AI support and assistance in solving complex coding issues, debugging, and help with spelling and grammar.
+- **Tutor Support**: For providing guidance throughout the development process, helping solve difficult problems and improve the quality of the project.
 
 ---
 
@@ -84,8 +92,6 @@ The primary font for the website is **Poppins**, chosen for its modern, sleek st
 For detailed testing information, please refer to the [TESTING.md](./TESTING.md) file. All features were tested for usability, responsiveness, and accessibility across different devices and browsers.
 
 ---
-
-## Deployment
 
 ### Heroku Deployment
 The project is deployed on Heroku, which is connected to the GitHub repository.
