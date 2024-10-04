@@ -5,37 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Wheel2Wheel{% endblock %}</title>
 
-    <!-- Load Django's static files and CSS -->
     {% load static %}
 
-    <!-- Main site CSS -->
+    <!-- Main site styles -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!-- FontAwesome for icons -->
+    <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Favicon for the site -->
+    <!-- Favicon -->
     <link rel="icon" sizes="16x16" href="{% static 'assets/favicon-16x16.png' %}">
     <link rel="icon" sizes="32x32" href="{% static 'assets/favicon-32x32.png' %}">
 
-    <!-- Block for additional page-specific CSS -->
     {% block extra_css %}{% endblock %}
 </head>
 <body>
-    <!-- Custom Toast Container for showing Django messages (e.g., success or error) -->
+    <!-- Toast notifications -->
     <div id="custom-toast" class="custom-toast"></div>
 
-    <!-- Check if there are any messages passed from Django -->
     {% if messages %}
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const toastElement = document.getElementById('custom-toast');
             
-            // Iterate through the messages and display them as toast notifications
             {% for message in messages %}
             toastElement.innerText = "{{ message }}";
             toastElement.classList.add('show');
-            
-            // Hide the toast message after 3 seconds
+
+            // Automatically hide the message after 3 seconds
             setTimeout(function () {
                 toastElement.classList.remove('show');
             }, 3000);
@@ -44,52 +40,46 @@
     </script>
     {% endif %}
 
-    <!-- Header containing the main navigation menu -->
     <header>
         <nav aria-label="Main Navigation">
-            <!-- Logo linking back to the homepage -->
+            <!-- Logo linking to homepage -->
             <div class="logo">
                 <a href="{% url 'home' %}">
                     <img src="{% static 'assets/W2W.png' %}" alt="W2W logo">
                 </a>
             </div>
 
-            <!-- Burger Icon for Mobile Navigation (Hamburger Menu) -->
+            <!-- Burger menu icon for mobile -->
             <button class="burger-icon" id="burger-icon" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <!-- Navigation Links (Hidden by default on mobile) -->
+            <!-- Navigation links -->
             <ul class="nav-links" id="nav-links">
                 <li><a href="{% url 'home' %}">Home</a></li>
 
-                <!-- Show these links if the user is authenticated -->
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'standings' %}">Standings</a></li>
                     <li><a href="{% url 'fia' %}">FIA</a></li>
                     <li><a href="{% url 'profile' %}">Profile</a></li>
                 {% endif %}
 
-                <!-- Show these links if the user is not authenticated -->
                 {% if not user.is_authenticated %}
                     <li><a href="{% url 'race_live_stream' %}">Race Live Stream</a></li>
                     <li><a href="{% url 'register' %}">Register</a></li>
                     <li><a href="{% url 'login' %}">Login</a></li>
                 {% else %}
-                    <!-- Show the Logout link if the user is authenticated -->
                     <li><a href="{% url 'logout' %}">Logout</a></li>
                 {% endif %}
             </ul>
         </nav>
     </header>
 
-    <!-- Main Content Block -->
-    {% block content %}
-    {% endblock %}
+    <!-- Main content section -->
+    {% block content %}{% endblock %}
 
-    <!-- Footer with links to Discord and YouTube using FontAwesome icons -->
     <footer>
         <a href="https://discord.gg/H4u9wrQYU8" target="_blank" aria-label="Discord">
             <i class="fab fa-discord"></i>
@@ -99,16 +89,15 @@
         </a>
     </footer>
 
-    <!-- Block for additional page-specific JavaScript -->
     {% block extra_js %}{% endblock %}
 
-    <!-- JavaScript to handle burger menu toggle for mobile view -->
+    <!-- JavaScript to handle mobile menu toggle -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const burgerIcon = document.getElementById('burger-icon');
             const navLinks = document.getElementById('nav-links');
 
-            // Toggle the visibility of the navigation links when the burger icon is clicked
+            // Toggle navigation visibility on burger icon click
             burgerIcon.addEventListener('click', () => {
                 const expanded = burgerIcon.getAttribute('aria-expanded') === 'true' || false;
                 burgerIcon.setAttribute('aria-expanded', !expanded);
