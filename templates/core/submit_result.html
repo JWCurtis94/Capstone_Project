@@ -1,19 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- Form Container for Submitting Race Results -->
 <div class="form-container">
-    <!-- Header for the Race Result Submission Form -->
+    <!-- Form header -->
     <h2>Submit Race Result</h2>
 
-    <!-- Form for Submitting Race Results -->
+    <!-- Race result submission form -->
     <form method="POST">
-        <!-- CSRF Token for Security -->
         {% csrf_token %}
-        <!-- Django Form Displayed as Paragraphs ({{ form.as_p }}) -->
         {{ form.as_p }}
 
-        <!-- Submit Button for the Form -->
+        <!-- Submit button -->
         <button type="submit">Submit Result</button>
     </form>
 </div>

@@ -5,7 +5,6 @@
 <main>
     <!-- Hero Section -->
     <div class="hero">
-        <!-- Hero image for the landing page -->
         <img src="{% static 'assets/hero-img.webp' %}" alt="F1 Sim Racing">
         <div class="hero-text">
             Welcome to <span class="highlight">Wheel2Wheel Racing</span>, where passion meets precision.
@@ -16,23 +15,21 @@
     <!-- Reaction Game Section -->
     <div class="reaction-game">
         {% if user.is_authenticated %}
-            <!-- Game title and instructions -->
             <h2>Test Your F1 Reaction Time!</h2>
             <p>Wait for the lights to turn green, then press the button as fast as you can!</p>
 
-            <!-- Game lights section (default: Red) -->
+            <!-- Reaction lights (starts with Red) -->
             <div class="lights-container">
                 <div class="light" id="light">Red</div>
             </div>
 
-            <!-- Start game button to trigger the reaction time game -->
+            <!-- Start button -->
             <button type="button" id="start-btn" onclick="startGame()">Start Game</button>
 
-            <!-- Display for reaction time result -->
+            <!-- Reaction time result -->
             <p id="reaction-time"></p>
-
         {% else %}
-            <!-- Message for non-authenticated users prompting to log in or register -->
+            <!-- Prompt for non-logged-in users -->
             <p><a href="{% url 'login' %}">Log in</a> or <a href="{% url 'register' %}">Sign up</a> to play the Reaction Game!</p>
         {% endif %}
     </div>
@@ -41,15 +38,14 @@
     <div class="container">
         <h1>About Wheel2Wheel Racing</h1>
 
-        <!-- Section describing the league and its operations -->
         <div class="about-section">
             <p class="about-text">
                 Welcome to <span class="highlight">Wheel2Wheel Racing</span>, a friendly league with 140+ members
-                racing on Saturdays and Sundays at 7:30pm across two divisions. We stream races each week to our
+                racing on Saturdays and Sundays at 7:30pm across two divisions. We stream races each week on our
                 YouTube Channel and have a fully operational FIA team.
             </p>
             <p class="about-text">
-                Whether you're a seasoned pro or just getting started, W2W offers a platform where drivers can race
+                Whether you're a seasoned pro or just starting out, W2W offers a platform for drivers to race
                 wheel-to-wheel in the most immersive and realistic racing environment available today.
             </p>
         </div>
@@ -57,7 +53,6 @@
         <!-- Team Section -->
         <h2 class="team-heading">Meet The Grid</h2>
 
-        <!-- Team members section displaying team principals -->
         <div class="team">
             <!-- Team Member 1 -->
             <div class="team-member">
@@ -132,6 +127,6 @@
     </div>
 </main>
 
-<!-- Link to external JavaScript file for the reaction game -->
+<!-- External JavaScript for the reaction game -->
 <script src="{% static 'js/reaction-game.js' %}"></script>
 {% endblock %}

@@ -1,20 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- Live Stream Container Section -->
 <div class="live-stream-container">
-    <!-- Heading for the Live Stream page -->
+    <!-- Live Stream Heading -->
     <h1>Race Live Stream</h1>
     <p>Watch the current race live below:</p>
 
-    <!-- Embedded YouTube live stream video -->
+    <!-- YouTube live stream. No live stream ID as this will be added at a later date once I obtain from leageue owner -->
     <iframe
-    src="https://www.youtube.com/embed/YOUR_LIVE_STREAM_ID" 
+    src="https://www.youtube.com/embed/"
     height="600" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen
     title="YouTube Live Stream of Wheel2Wheel Racing">
     </iframe>
-
 </div>
 {% endblock %}

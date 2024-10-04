@@ -1,36 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- League Standings Container -->
 <div class="standings-container">
-    <!-- Standings Header -->
+    <!-- League Standings Header -->
     <h2 class="standings-title">League Standings</h2>
 
     <!-- Scrollable table container for responsiveness -->
     <div class="table-responsive">
-        <!-- Table to Display League Standings -->
         <table aria-label="League Standings Table" class="standings-table">
             <thead>
                 <tr>
-                    <!-- Table Headers for Position, Driver, and Points -->
                     <th scope="col">Position</th>
                     <th scope="col">Driver</th>
                     <th scope="col">Points</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Loop through the standings and display each driver's position, username, and points -->
+                <!-- Loop through standings and display each driver's data -->
                 {% for standing in standings %}
                 <tr>
-                    <!-- Display position using the loop counter -->
                     <td>{{ forloop.counter }}</td>
-                    <!-- Display driver's username -->
                     <td>{{ standing.driver__username }}</td>
-                    <!-- Display total points for the driver -->
                     <td>{{ standing.total_points }}</td>
                 </tr>
                 {% empty %}
-                <!-- If no standings available, display this message -->
+                <!-- Message for when no standings are available -->
                 <tr>
                     <td colspan="3" class="no-data">No standings available yet.</td>
                 </tr>
