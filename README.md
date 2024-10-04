@@ -1,5 +1,5 @@
 # Wheel2Wheel (W2W)  
-![W2W Responsive Screenshot](![Screenshot 2024-10-03 235729](https://github.com/user-attachments/assets/4bb7f986-41d0-4241-b1cc-8fec820b7ee4)
+(![Screenshot 2024-10-03 235729](https://github.com/user-attachments/assets/4bb7f986-41d0-4241-b1cc-8fec820b7ee4)
 
 ## Introduction
 **Wheel2Wheel** This website is designed for a Formula 1 sim racing league, where users can sign up to become drivers, check out race results and standings, and explore FIA regulations. Built using Django and Bootstrap, it focuses on managing data, engaging users, and making form submissions easy. It also embraces modern web design with a clean, minimalist look. This project was created as part of my capstone, where I focused on learning full-stack development, Python, and deployment, bringing everything together in a functional and visually appealing way.
