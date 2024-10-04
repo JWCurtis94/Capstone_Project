@@ -1,8 +1,8 @@
 # Wheel2Wheel (W2W)  
-![W2W Responsive Screenshot](path/to/your/screenshot.png)
+![W2W Responsive Screenshot](![Screenshot 2024-10-03 235729](https://github.com/user-attachments/assets/4bb7f986-41d0-4241-b1cc-8fec820b7ee4)
 
 ## Introduction
-**Wheel2Wheel** is a website designed for a Formula 1 sim racing league, where users can join as drivers, view race results and standings, and learn about FIA regulations. The project is built using Django and Bootstrap, with an emphasis on database management, user interaction, and form submission. It also showcases modern web design principles with a minimalist theme. This project was developed as part of a capstone project, focusing on learning full-stack development, UX design, and deployment.
+**Wheel2Wheel** This website is designed for a Formula 1 sim racing league, where users can sign up to become drivers, check out race results and standings, and explore FIA regulations. Built using Django and Bootstrap, it focuses on managing data, engaging users, and making form submissions easy. It also embraces modern web design with a clean, minimalist look. This project was created as part of my capstone, where I focused on learning full-stack development, Python, and deployment, bringing everything together in a functional and visually appealing way.
 
 - **View live site here**: [Wheel2Wheel](https://yourlivewebsite.com)
 - **For Admin access**: [W2W Admin](https://youradminlink.com)
@@ -14,7 +14,7 @@ Wheel2Wheel is a hub for F1 sim racing enthusiasts to compete, track standings, 
 - **User Registration**: Users sign up and register their profiles, which includes setting up account details.
 - **Race Results & Standings**: The site dynamically updates standings and race results based on input from admin.
 - **FIA Page**: Information about league rules, regulations, and the FIA code is readily accessible.
-- **Become a Driver Form**: Registered users can apply to become drivers by submitting their racing stats and track performance images.
+- **Reaction Game**: Registered users can have fun testing their reactions.
 
 ---
 
@@ -24,16 +24,10 @@ Wheel2Wheel is a hub for F1 sim racing enthusiasts to compete, track standings, 
 The inspiration for the Wheel2Wheel website came from a mix of professional F1 websites and minimalist design principles. The aim was to create a sleek, functional site where content is king, supported by subtle animations and smooth transitions.
 
 ### Color Scheme
-The site features a dark, minimalist theme with pops of red, yellow, and white against a black background, embodying the thrilling and high-speed nature of F1 racing. This palette reflects the excitement and competition of the sport, while maintaining a clean, professional aesthetic.
-
-| Section      | Color           | CSS Variable       |
-|--------------|-----------------|--------------------|
-| Nav Bar      | #FF0000 (Red)    | `--nav-color`      |
-| Hero Section | #000000 (Black)  | `--hero-bg`        |
-| Buttons      | #FFFF00 (Yellow) | `--button-color`   |
+The site features a dark, minimalist theme with pops of red, yellow, and white against a dark background. I chose this theme as it ties in with the website logo, ensuring consistency across every page.
 
 ### Typography
-The primary font for the website is **Montserrat**, chosen for its modern, sleek style that pairs well with the overall design of the site. **Roboto** is used for the body text, offering clean and easy readability across all devices.
+The primary font for the website is **Poppins**, chosen for its modern, sleek style that pairs well with the overall design of the site. **sans-serif, Arial** is used for site fallback options.
 
 ---
 
@@ -42,10 +36,10 @@ The primary font for the website is **Montserrat**, chosen for its modern, sleek
 - Users can sign up and log in using Django-allauth. The login system supports email verification and password reset functionality.
 
 ### Race Results & Standings
-- Standings and race results are updated regularly. These are displayed dynamically on the website and offer a clean, responsive design for viewing across devices.
+- Standings and race results are updated regularly. They are displayed dynamically on the website and offer a clean, responsive design for viewing across devices. This feature is currently awaiting spreadsheet data from the league, so no data is being displayed at the moment. The issue will be resolved once I receive this information from the league owner.
 
-### Become a Driver Form (Accessible to Logged-In Users Only)
-- Registered users can apply to become drivers by submitting their EA ID, nationality, platform, and uploading Time Trial images for tracks including Monza 🇮🇹, Texas 🇺🇸, and Hungary 🇭🇺.
+### Reaction Game
+- Registered users can have fun testing how quick their reactions are when the light turns green.
 
 ### FIA Page
 - The FIA section provides in-depth details on the league rules and regulations, ensuring all participants are aware of the standards they must follow.
@@ -53,7 +47,18 @@ The primary font for the website is **Montserrat**, chosen for its modern, sleek
 ### Additional Features:
 - **Responsive Design**: The site is fully responsive and adapts to various screen sizes, ensuring a seamless experience across mobile, tablet, and desktop devices.
 - **Smooth Navigation**: Users enjoy smooth transitions and animations, enhancing the overall browsing experience.
-- **Hero Section with Video**: The homepage features a hero section with a full-width video showcasing the racing league, drawing users in from the start.
+- **Live Stream**: Users can watch the races live directly from the website when they are being shown on YouTube.
+- **Footer Icons**: The footer contains links to both the Discord channel and the YouTube channel for easy external navigation.
+
+---
+
+## Future Features
+- **Enhanced Driver Profiles**: I plan to give each driver a more personalized experience by expanding the profiles to include detailed stats, race history, and milestones. Drivers will be able to track their progress and show off their accomplishments throughout the season.
+- **Community Forum**: I want to bring our racing community closer together, so we're planning to add a forum where users can discuss race strategies, share tips, and connect with other drivers and fans. It’s all about building a place for everyone to engage and grow.
+- **In-Depth Race Analytics**: Implement advanced analytics for race results, including charts and graphs to display lap times, race positions, and comparison data between drivers. This will give users deeper insights into race performance.
+- **Race Highlights and Replays**: Missed a race? No worries. In the near future, you’ll be able to catch race highlights or watch full replays directly from the site, so you never miss any action.
+- **Improved Driver Recruitment**: I planning to make the "Become a Driver" form even better by including more information like your availability, practice sessions, and skill levels. This will make it easier for new drivers to join the team and for existing drivers to switch between full-time and reserve spots.
+- **Reaction Game Leaderboard**: The reaction game will feature a leaderboard so users can see where they rank among other members' times.
 
 ---
 
@@ -62,17 +67,16 @@ The primary font for the website is **Montserrat**, chosen for its modern, sleek
 - **Python (Django Framework)**
 - **Bootstrap**
 - **Django-allauth**
-- **Cloudinary** for media storage
 - **PostgreSQL** for database management
 - **Heroku** for deployment
 
 ---
 
-## Tools & Programs
+## Tools & Credits
 - **Git & GitHub**: Version control and repository hosting.
 - **Figma**: For wireframing and design mockups.
 - **Adobe Color**: For choosing and testing the website’s color palette.
-- **WAVE**: Used to test and improve site accessibility.
+- **WAVE**:
 
 ---
 
@@ -84,15 +88,4 @@ For detailed testing information, please refer to the [TESTING.md](./TESTING.md)
 ## Deployment
 
 ### Heroku Deployment
-The project is deployed on Heroku, which is connected to the GitHub repository. Every push to the main branch triggers an automatic deployment.
-
-1. Set up a new Heroku app.
-2. Configure environment variables such as `SECRET_KEY`, `DATABASE_URL`, and `CLOUDINARY_URL`.
-3. Ensure the `Procfile` and `requirements.txt` are configured correctly for Heroku deployment.
-
-### Clone Project
-To clone this project, follow these steps:
-1. Open the command line and navigate to the desired directory.
-2. Run the command:
-   ```bash
-   git clone https://github.com/JWCurtis94/Capstone_Project.git
+The project is deployed on Heroku, which is connected to the GitHub repository.
