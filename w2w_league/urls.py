@@ -66,7 +66,7 @@ urlpatterns = [
     path('races/add/', RaceCreateView.as_view(), name='race_add'),
     path('races/<int:pk>/edit/', RaceUpdateView.as_view(), name='race_edit'),
     path('races/<int:pk>/delete/', RaceDeleteView.as_view(), name='race_delete'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 
 # Serve media files during development
 if settings.DEBUG:
