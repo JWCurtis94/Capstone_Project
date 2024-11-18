@@ -27,7 +27,7 @@ MEDIA_URL = '/media/'
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'w2w-final-bf0ef1187cbe.herokuapp.com'
