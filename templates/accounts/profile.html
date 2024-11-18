@@ -7,10 +7,10 @@
 
     <!-- Profile Image -->
     <div class="profile-image">
-        <img src="{% if user.profile.image %}{{ user.profile.image.url }}{% else %}{% static 'assets/default-placeholder.png.webp' %}{% endif %}" 
-             alt="{{ user.username }}'s profile picture" 
-             class="profile-picture" 
-             onerror="this.onerror=null; this.src='{% static 'assets/default-placeholder.png.webp' %}';">
+        <img src="{% if user.profile.image %}{{ user.profile.image.url }}?{% now 'U' %}{% else %}{% static 'assets/default-placeholder.png.webp' %}{% endif %}" 
+        alt="{{ user.username }}'s profile picture" 
+        class="profile-picture" 
+        onerror="this.onerror=null; this.src='{% static 'assets/default-placeholder.png.webp' %}';">
     </div>
 
     <!-- Update Profile Form -->

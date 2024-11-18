@@ -42,9 +42,24 @@ def profile(request):
         )
 
         if u_form.is_valid() and p_form.is_valid():
+            # Debug print
+            print("Files in request:", request.FILES)
+            
             u_form.save()
-            p_form.save()
+            profile = p_form.save()
+            
+            # Debug print
+            print("Profile image path:", profile.image.path if profile.image else "No image")
+            
+            messages.success(request, 'Your profile has been updated!')
+            
+            # Force a reload of the profile from the database
+            profile.refresh_from_db()
+            
             return redirect('profile')
+        else:
+            # Debug print form errors
+            print("Form errors:", u_form.errors, p_form.errors)
     else:
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=profile)
