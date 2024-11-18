@@ -31,12 +31,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'https://w2w-791ab20c5eb9.herokuapp.com/',
-    '8000-jwcurtis94-capstoneproj-69di1ee8i9e.ws.codeinstitute-ide.net',
+    '8000-jwcurtis94-capstoneproj-28w2lhktqgo.ws.codeinstitute-ide.net',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://w2w-791ab20c5eb9.herokuapp.com/',
-    'https://8000-jwcurtis94-capstoneproj-69di1ee8i9e.ws.codeinstitute-ide.net',
+    'https://8000-jwcurtis94-capstoneproj-28w2lhktqgo.ws.codeinstitute-ide.net',
 ]
 
 # Application definition
@@ -157,6 +157,7 @@ AUTHENTICATION_BACKENDS = (
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_USERNAME_MIN_LENGTH = 4
