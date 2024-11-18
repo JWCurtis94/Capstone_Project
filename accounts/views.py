@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserUpdateForm, ProfileUpdateForm
 from .forms import RegistrationForm
 from .models import Profile
+from django.db import IntegrityError
 
 
 # Create your views here.
@@ -14,6 +15,11 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save()
+            try:
+                Profile.objects.create(user=user, bio='')
+            except IntegrityError:
+                # Profile already exists, skip creation
+                pass
             login(request, user)
             return redirect('home')
     else:

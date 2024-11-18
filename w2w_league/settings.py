@@ -27,14 +27,16 @@ MEDIA_URL = '/media/'
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'https://w2w-791ab20c5eb9.herokuapp.com/',
+    '8000-jwcurtis94-capstoneproj-69di1ee8i9e.ws.codeinstitute-ide.net',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://w2w-791ab20c5eb9.herokuapp.com/',
+    'https://8000-jwcurtis94-capstoneproj-69di1ee8i9e.ws.codeinstitute-ide.net',
 ]
 
 # Application definition

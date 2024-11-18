@@ -43,3 +43,6 @@ class IncidentTicket(models.Model):
 
     def __str__(self):
         return f"{self.username} - {self.race_name}"
+    
+class ReactionTime(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
