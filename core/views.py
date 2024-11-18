@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Race, RaceResult, Verdict
-from .forms import RaceResultForm, IncidentTicketForm
+from .models import Race, RaceResult, Verdict, IncidentTicket, ReactionTime
+from .forms import RaceResultForm, IncidentTicketForm, RaceForm
 from django.db.models import Sum, F, Case, When, IntegerField
 from django.utils import timezone
-from . import views
-from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from django.contrib import messages
 
 
 def home(request):
@@ -37,34 +38,19 @@ def submit_result(request):
 
 
 def standings(request):
-    results = RaceResult.objects.values('driver__username').annotate(
-        total_points=Sum(
-            Case(
-                When(position=1, then=25),
-                When(position=2, then=21),
-                When(position=3, then=18),
-                When(position=4, then=15),
-                When(position=5, then=12),
-                When(position=6, then=10),
-                When(position=7, then=8),
-                When(position=8, then=6),
-                When(position=9, then=4),
-                When(position=10, then=3),
-                When(position=11, then=2),
-                When(position=12, then=1),
-                default=0,
-                output_field=IntegerField()
-            )
-        ) + Sum(
-            Case(
-                When(fastest_lap=True, then=1),
-                default=0,
-                output_field=IntegerField()
-            )
-        )
-    ).order_by('-total_points')
+    upcoming_races = Race.objects.all().order_by('date')
+    return render(request, 'core/standings.html', {'upcoming_races': upcoming_races})
 
-    return render(request, 'core/standings.html', {'standings': results})
+    return render(request, 'core/standings.html', {
+        'standings': results,
+        'upcoming_races': upcoming_races
+    })
+
+    return render(
+        request, 
+        'core/standings.html', 
+        {'standings': results, 'upcoming_races': upcoming_races}
+    )
 
 
 def fia(request):
@@ -106,3 +92,42 @@ def reaction_game(request):
 
 def live_stream(request):
     return render(request, 'core/live_stream.html')
+
+class RaceListView(ListView):
+    model = Race
+    template_name = 'race_list.html'
+    context_object_name = 'races'
+    ordering = ['date']
+
+# Update an existing race
+class RaceCreateView(CreateView):
+    model = Race
+    form_class = RaceForm
+    template_name = 'core/race_form.html'
+    success_url = reverse_lazy('standings')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, f'Race {form.instance.name} added successfully')
+        return response
+
+class RaceUpdateView(UpdateView):
+    model = Race
+    form_class = RaceForm
+    template_name = 'core/race_form.html'
+    success_url = reverse_lazy('standings')
+    
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        messages.success(self.request, f'Race {form.instance.name} updated successfully')
+        return response
+
+class RaceDeleteView(DeleteView):
+    model = Race
+    template_name = 'core/race_confirm_delete.html'
+    success_url = reverse_lazy('standings')
+    
+    def delete(self, request, *args, **kwargs):
+        race = self.get_object()
+        messages.success(request, f'Race {race.name} deleted successfully')
+        return super().delete(request, *args, **kwargs)

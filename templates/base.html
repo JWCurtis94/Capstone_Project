@@ -61,7 +61,7 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
 
                 {% if user.is_authenticated %}
-                    <li><a href="{% url 'standings' %}">Standings</a></li>
+                    <li><a href="{% url 'standings' %}">Schedule</a></li>
                     <li><a href="{% url 'fia' %}">FIA</a></li>
                     <li><a href="{% url 'profile' %}">Profile</a></li>
                 {% endif %}

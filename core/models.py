@@ -4,12 +4,13 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Race(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=200)
     date = models.DateTimeField()
-    track = models.CharField(max_length=100)
+    track = models.CharField(max_length=200)
+    sprint = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.name} - {self.date.strftime('%Y-%m-%d')}"
+        return self.name
 
 
 class RaceResult(models.Model):

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h2 class="mb-0">Race Calendar</h2>
+                    <a href="{% url 'race_add' %}" class="btn btn-primary">Add New Race</a>
+                </div>
+                <div class="card-body">
+                    {% if races %}
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Race</th>
+                                        <th>Track</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for race in races %}
+                                    <tr>
+                                        <td>{{ race.name }}</td>
+                                        <td>{{ race.track }}</td>
+                                        <td>{{ race.date }}</td>
+                                        <td>
+                                            <a href="{% url 'race_edit' race.pk %}" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="{% url 'race_delete' race.pk %}" class="btn btn-sm btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <p class="text-center">No races scheduled yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

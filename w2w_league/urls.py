@@ -24,6 +24,7 @@ from accounts import views as accounts_views
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import messages
 from core import views
+from core.views import RaceListView, RaceCreateView, RaceUpdateView, RaceDeleteView
 
 
 # Custom login and logout views to include messages
@@ -59,12 +60,12 @@ urlpatterns = [
     path('fia/', core_views.fia, name='fia'),
     path('calendar/', core_views.calendar, name='calendar'),
     path('about/', core_views.about, name='about'),
-    path(
-        'reaction-game/', core_views.reaction_game, name='reaction_game'
-    ),
-    path(
-        'live-stream/', views.live_stream, name='race_live_stream'
-    ),
+    path('reaction-game/', core_views.reaction_game, name='reaction_game'),
+    path('live-stream/', views.live_stream, name='race_live_stream'),
+    path('races/', RaceListView.as_view(), name='race_list'),
+    path('races/add/', RaceCreateView.as_view(), name='race_add'),
+    path('races/<int:pk>/edit/', RaceUpdateView.as_view(), name='race_edit'),
+    path('races/<int:pk>/delete/', RaceDeleteView.as_view(), name='race_delete'),
 ]
 
 # Serve media files during development

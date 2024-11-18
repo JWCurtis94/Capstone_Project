@@ -1,34 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="standings-container">
-    <!-- League Standings Header -->
-    <h2 class="standings-title">League Standings</h2>
+<div class="standings-container mt-5">
+    <h2 class="standings-title">Race Schedule</h2>
+    <a href="{% url 'race_add' %}" class="btn btn-primary mb-3">Add New Race</a>
 
-    <!-- Scrollable table container for responsiveness -->
     <div class="table-responsive">
-        <table aria-label="League Standings Table" class="standings-table">
+        <table aria-label="Race Schedule" class="standings-table">
             <thead>
                 <tr>
-                    <th scope="col">Position</th>
-                    <th scope="col">Driver</th>
-                    <th scope="col">Points</th>
+                    <th>Name</th>
+                    <th>Track</th>
+                    <th>Sprint</th>
+                    <th>Date</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Loop through standings and display each driver's data -->
-                {% for standing in standings %}
-                <tr>
-                    <td>{{ forloop.counter }}</td>
-                    <td>{{ standing.driver__username }}</td>
-                    <td>{{ standing.total_points }}</td>
-                </tr>
-                {% empty %}
-                <!-- Message for when no standings are available -->
-                <tr>
-                    <td colspan="3" class="no-data">No standings available yet.</td>
-                </tr>
-                {% endfor %}
+                {% if upcoming_races %}
+                    {% for race in upcoming_races %}
+                    <tr>
+                        <td>{{ race.name }}</td>
+                        <td>{{ race.track }}</td>
+                        <td>{% if race.sprint %}Yes{% else %}No{% endif %}</td>
+                        <td>{{ race.date|date:"F j, Y H:i" }}</td>
+                        <td>
+                            <a href="{% url 'race_edit' race.id %}" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="{% url 'race_delete' race.id %}" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="5">No schedule available yet.</td>
+                    </tr>
+                {% endif %}
             </tbody>
         </table>
     </div>
