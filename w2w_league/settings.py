@@ -31,12 +31,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'https://w2w-791ab20c5eb9.herokuapp.com/',
-    '8000-jwcurtis94-capstoneproj-28w2lhktqgo.ws.codeinstitute-ide.net',
+    '8000-jwcurtis94-capstoneproj-42sfd5mjac8.ws.codeinstitute-ide.net',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://w2w-791ab20c5eb9.herokuapp.com/',
-    'https://8000-jwcurtis94-capstoneproj-28w2lhktqgo.ws.codeinstitute-ide.net',
+    'https://8000-jwcurtis94-capstoneproj-42sfd5mjac8.ws.codeinstitute-ide.net',
 ]
 
 # Application definition
@@ -152,7 +152,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Allauth settings
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
@@ -164,20 +163,6 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-
-# Social account providers configuration (Google, Facebook)
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'SCOPE': ['profile', 'email'],
-        'AUTH_PARAMS': {'access_type': 'online'},
-    },
-    'facebook': {
-        'METHOD': 'oauth2',
-        'SCOPE': ['email'],
-        'FIELDS': ['id', 'email', 'name'],
-        'VERIFIED_EMAIL': False,
-    },
-}
 
 GRAPH_MODELS = {
   'all_applications': True,
