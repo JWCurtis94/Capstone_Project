@@ -74,19 +74,6 @@
                     <li><strong>Penalty Points Received 15</strong>: WDC and WCC 50 Point Deduction and a Seat Review from Owners</li>
                 </ul>
             </div>
-
-            <!-- Incident Ticket Submission Section -->
-            <section id="submit-ticket" class="ticket-section">
-                <h2>Submit a Race Incident Ticket</h2>
-                <p>If you were involved in or witnessed an incident during a race, please submit a ticket for FIA review:</p>
-
-                <!-- Form to Submit a Race Incident Ticket -->
-                <form method="POST" action="/submit-form/">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit">Submit Ticket</button>
-                </form>
-            </section>
         </div>
     </section>
 {% endblock %}
