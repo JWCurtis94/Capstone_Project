@@ -30,11 +30,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'w2w-final-bf0ef1187cbe.herokuapp.com/',
+    'w2w-final-bf0ef1187cbe.herokuapp.com/'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://w2w-final-bf0ef1187cbe.herokuapp.com/',
+    'https://w2w-final-bf0ef1187cbe.herokuapp.com/'
 ]
 
 # Application definition
